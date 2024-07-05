@@ -16,8 +16,7 @@ const Header = () => {
         </h1>
         <PCNav />
       </div>
-      <nav className="flex items-center gap-4 max-lg:hidden">
-        {/* <SearchProductInput /> */}
+      <nav className="flex items-center gap-4">
         <Cart />
         <AccoountNav />
         <MobileNav />

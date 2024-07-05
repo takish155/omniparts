@@ -43,15 +43,16 @@ export const reviewProductRouter = router({
             productImage: productToReview.productImage,
             review: alreadyReviewed.review,
             rating: alreadyReviewed.rating,
+            status: "200",
           };
         }
 
         return {
           productName: productToReview.productName,
           productImage: productToReview.productImage,
+          status: "200",
         };
       } catch (error) {
-        console.error(error);
         throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
       }
     }),

@@ -22,18 +22,18 @@ const ProductReviewCard = ({
   return (
     <Card className="mx-auto mb-6">
       <CardHeader>
-        <CardTitle>{username}</CardTitle>
+        <CardTitle className="text-base">{username}</CardTitle>
         <CardDescription>
           <ReactStars
             className="my-0"
-            size={25}
+            size={20}
             value={userRated}
             edit={false}
           />
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>{userMessage}</p>
+        <p className="mt-2">{userMessage}</p>
       </CardContent>
     </Card>
   );

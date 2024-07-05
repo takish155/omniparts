@@ -4,8 +4,6 @@ import PCNav from "./pc-nav";
 import MobileNav from "./mobile-nav";
 import AccoountNav from "./account-nav";
 import Cart from "./cart";
-import { Input } from "../ui/input";
-import SearchProductInput from "./search-product-input";
 
 const Header = () => {
   return (

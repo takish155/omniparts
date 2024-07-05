@@ -1,4 +1,5 @@
-import { router } from "../trpc";
+import prisma from "@/app/api/db";
+import { publicProcedure, router } from "../trpc";
 import { getProductRatingRouter } from "./getProductRating";
 import { getProductReviewRouter } from "./getProductReviews";
 import { getProductStockRouter } from "./getProductStock";
@@ -9,4 +10,8 @@ export const productPageRouter = router({
   getProductStock: getProductStockRouter.getProductStock,
   getProductRating: getProductRatingRouter.getProductRating,
   getProductReview: getProductReviewRouter.getProductReviews,
+  getProductParams: publicProcedure.query(async () => {
+    const params = await prisma.product.findMany({ select: { slug: true } });
+    return params;
+  }),
 });

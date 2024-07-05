@@ -313,6 +313,7 @@
     "maxStarRatingError": "Invalid star rating",
     "reviewUpdated": "Review updated successfully",
     "submit": "Submit",
-    "Required": "Required"
+    "Required": "Required",
+    "error": "An error occurred"
   }
 }

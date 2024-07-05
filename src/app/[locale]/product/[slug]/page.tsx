@@ -28,11 +28,6 @@ const ReviewProduct = dynamic(
   }
 );
 
-export const generateStaticParams = async () => {
-  const data = await caller.productPage.getProductParams();
-  return data;
-};
-
 const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const productData = getProductBySlug(params.slug);
   const translation = getTranslations("PageMessages");

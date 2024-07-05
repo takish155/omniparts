@@ -5,12 +5,15 @@ import { Button } from "../ui/button";
 import { Cart, useCartStore } from "@/context/cart";
 import { toast } from "sonner";
 import useHandleProductAction from "@/hooks/useHandleProductAction";
-import ProductActionSkeleton from "./skeleton/product-action-skeleton";
 import ProductStock from "./product-stock";
+import { useSession } from "@/context/SessionProvider";
+import { useRouter } from "next/navigation";
 
 const ProductAction = ({ data }: { data: Cart }) => {
   const { t, mutate, isPending } = useHandleProductAction(data.slug);
   const { addProduct } = useCartStore();
+  const router = useRouter();
+  const session = useSession();
 
   return (
     <>
@@ -29,7 +32,12 @@ const ProductAction = ({ data }: { data: Cart }) => {
           className="w-[45%]"
           disabled={isPending}
           variant={"secondary"}
-          onClick={() =>
+          onClick={() => {
+            if (!session) {
+              toast.error(t("loginToBuy"));
+              router.push("/account/signin");
+              return;
+            }
             mutate([
               {
                 productId: data.id,
@@ -38,8 +46,8 @@ const ProductAction = ({ data }: { data: Cart }) => {
                 price: data.productPrice,
                 image: data.image as string,
               },
-            ])
-          }
+            ]);
+          }}
         >
           {t("buyNow")}
         </Button>

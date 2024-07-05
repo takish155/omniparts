@@ -2,10 +2,23 @@
 
 import { SignInSchemaType } from "@/app/schema/account/authSchema";
 import { signIn } from "./auth";
-import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 const signInAction = async (data: SignInSchemaType) => {
-  await signIn("credentials", data);
+  try {
+    await signIn("credentials", {
+      ...data,
+      redirect: false,
+    });
+
+    return {
+      status: 200,
+    };
+  } catch (error) {
+    return {
+      status: 400,
+    };
+  }
 };
 
 export default signInAction;

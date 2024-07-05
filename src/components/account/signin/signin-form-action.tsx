@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-const SignInFormAction = () => {
+const SignInFormAction = ({ isPending }: { isPending: boolean }) => {
   const t = useTranslations("SignInPage");
 
   return (
     <div className="flex flex-col gap-4 max-w-sm mx-auto">
-      <Button>{t("signInButton")}</Button>
+      <Button disabled={isPending}>{t("signInButton")}</Button>
       <LocaleLink href={"/account/signup"} passHref={true}>
         <Button type="button" variant={"secondary"} className="w-full">
           {t("noAccount")}

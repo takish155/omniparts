@@ -5,10 +5,13 @@ import {
 } from "@/app/schema/account/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const useHandleSignUp = () => {
+  const router = useRouter();
+
   const {
     handleSubmit,
     formState: { errors },
@@ -21,7 +24,8 @@ const useHandleSignUp = () => {
     mutationFn: async (data: SignUpSchemaType) => await signUpAction(data),
     onSettled: (res) => {
       if (res?.status === 200) {
-        toast(res.message);
+        toast.success(res.message);
+        router.push("/");
       }
     },
   });

@@ -11,7 +11,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const SignInForm = () => {
   const t = useTranslations("SignInPage");
-  const { errors, handleSubmit, register, mutate, isError } = useHandleSignIn();
+  const { errors, handleSubmit, register, mutate, isError, isPending } =
+    useHandleSignIn();
 
   return (
     <form
@@ -51,7 +52,7 @@ const SignInForm = () => {
           </p>
         )}
       </div>
-      <SignInFormAction />
+      <SignInFormAction isPending={isPending} />
     </form>
   );
 };

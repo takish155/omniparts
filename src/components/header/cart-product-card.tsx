@@ -16,7 +16,7 @@ const CartProductCard = ({ data }: { data: Cart }) => {
     refetch,
   } = trpc.productPage.getProductStock.useQuery(data.slug);
   const { addQuantity, lowerQuantity } = useCartStore();
-  if (isLoading) return <Skeleton className="w-full h-[20vh]" />;
+  if (isLoading) return <Skeleton className="w-full h-[20vh] mb-6" />;
 
   return (
     <Card className="w-full mb-6">

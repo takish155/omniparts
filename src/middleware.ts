@@ -9,6 +9,7 @@ const locales = ["en", "ja"];
 
 const publicPages = [
   "/",
+  "/product/:path*",
   "/discover",
   "/account/signin",
   "/account/signup",
@@ -41,6 +42,13 @@ export default function middleware(req: NextRequest) {
     "i"
   );
   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
+
+  const reqUrl = req.nextUrl.pathname.split("/");
+  reqUrl.shift();
+
+  if (reqUrl.length === 3 && reqUrl[1] === "product") {
+    return intlMiddleware(req);
+  }
 
   if (isPublicPage) {
     return intlMiddleware(req);

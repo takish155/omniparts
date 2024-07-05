@@ -9,6 +9,7 @@ import signInAction from "@/app/api/auth/signInAction";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 const useHandleSignIn = () => {
   const {
@@ -20,14 +21,23 @@ const useHandleSignIn = () => {
   });
   const [isError, setError] = useState(false);
   const t = useTranslations("SignInPage");
+  const router = useRouter();
 
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: SignInSchemaType) => await signInAction(data),
     onError: () => {
       setError(true);
     },
-    onSuccess: () => {
-      toast.success(t("signInSuccess"));
+    onSuccess: (res) => {
+      if (res.status === 400) {
+        setError(true);
+        return;
+      }
+      if (res.status === 200) {
+        setError(false);
+        toast.success(t("signInSuccess"));
+        router.push("/");
+      }
     },
   });
 

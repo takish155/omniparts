@@ -26,8 +26,11 @@
     "toggleMenubar": "Toggle Menubar",
     "stockLeft": "{stock} left remaining, order now!",
     "outOfStock": "Out of Stock",
+    "loginToCheckout": "Login to checkout",
     "searchSomething": "Search PC parts...",
-    "outOfStockDescription": "It seems that this product is out of stock, If possible, try lowering the quantity or contact support for more information."
+    "outOfStockDescription": "It seems that this product is out of stock, If possible, try lowering the quantity or contact support for more information.",
+    "signOutSuccess": "Sign out success!",
+    "signOutError": "Sign out failed, please try again."
   },
   "categories": {
     "cpu": "CPU",
@@ -108,7 +111,8 @@
     "all": "All",
     "below": "Below {price}",
     "aboveRating": "Above {rating} stars",
-    "toggleMenubar": "Toggle Menubar"
+    "toggleMenubar": "Toggle Menubar",
+    "noProducts": "No products found, try searching for another product or try again later."
   },
   "ProductPage": {
     "taxIncluded": "Tax Included",
@@ -137,6 +141,7 @@
     "reviewProduct": "Review this product",
     "noReviewYet": "This product has no review yet",
     "discover": "Discover",
+    "loginToBuy": "Login to buy this product",
     "home": "Home"
   },
   "AccountNav": {
@@ -154,7 +159,8 @@
     "shipped": "Shipped",
     "status": "Status:",
     "processing": "Processing",
-    "delivered": "Delivered"
+    "delivered": "Delivered",
+    "noOrders": "No orders found, try ordering something!"
   },
   "AccountSecurity": {
     "title": "Account Security",
@@ -252,7 +258,9 @@
     "500title": "500 Internal Server Error",
     "somethingWentWrong": "Sorry, something went wrong. Try again later. If the problem persists, contact support.",
     "orderSuccess": "Order Success",
-    "orderSuccessDescription": "Your order has been successfully placed. Check your account for more information."
+    "orderSuccessDescription": "Your order has been successfully placed. Check your account for more information.",
+    "pageNotFound": "404 Page Not Found",
+    "pageNotFoundDescription": "Sorry, the page you are looking for is not found. Check if the url is correct or try again later."
   },
   "AdminProductPage": {
     "title": "Products",
@@ -291,7 +299,8 @@
     "forbidden": "Forbidden, you do not have permission to update this order"
   },
   "OrderHistoryPage": {
-    "title": "Order History"
+    "title": "Order History",
+    "noOrders": "No orders found in your history, try ordering something!"
   },
   "ReviewPage": {
     "title": "Review this product",

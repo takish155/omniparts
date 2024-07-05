@@ -5,6 +5,9 @@ import ProductActionSkeleton from "../product/skeleton/product-action-skeleton";
 const ProductPageSkeleton = () => {
   return (
     <div className="flex mt-8 flex-wrap w-[95%] mx-auto justify-evenly">
+      <div className="w-full mb-4">
+        <Skeleton className="w-[240px] h-[20px]" />
+      </div>
       <div className="w-[40%] max-md:w-[90%]">
         <Skeleton className="w-full h-[400px]" />
       </div>

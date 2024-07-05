@@ -8,6 +8,7 @@ import prisma from "../db";
 import { getTranslations } from "next-intl/server";
 import bcrypt from "bcryptjs";
 import signInAction from "./signInAction";
+import { redirect } from "next/navigation";
 
 const signUpAction = async (data: SignUpSchemaType) => {
   try {

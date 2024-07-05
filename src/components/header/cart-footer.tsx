@@ -5,9 +5,14 @@ import { SheetFooter } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { formatToMoney } from "@/lib/formatToMoney";
 import useHandleCheckout from "@/hooks/useHandleCheckout";
+import { useSession } from "@/context/SessionProvider";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const CartFooter = () => {
   const { isPending, mutate, total, t, products } = useHandleCheckout();
+  const router = useRouter();
+  const session = useSession();
 
   return (
     <SheetFooter>
@@ -19,7 +24,13 @@ const CartFooter = () => {
         <Button
           disabled={isPending}
           size={"lg"}
-          onClick={() =>
+          onClick={() => {
+            if (!session) {
+              router.push("/account/signin");
+              toast.error(t("loginToCheckout"));
+              return;
+            }
+
             mutate(
               products.map((product) => {
                 return {
@@ -30,8 +41,8 @@ const CartFooter = () => {
                   image: product.image as string,
                 };
               })
-            )
-          }
+            );
+          }}
         >
           {t("checkout")}
         </Button>

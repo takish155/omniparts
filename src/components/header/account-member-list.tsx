@@ -11,10 +11,18 @@ import {
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import signOutAction from "@/app/api/auth/signOutAction";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 const AccountMemberList = () => {
-  const router = useRouter();
   const t = useTranslations("header");
+  const { mutate } = useMutation({
+    mutationFn: async () => await signOutAction(),
+    onSettled: (res) => {
+      toast.success(t("signOutSuccess"));
+    },
+  });
+  const router = useRouter();
   const locale = useLocale();
 
   return (
@@ -25,7 +33,7 @@ const AccountMemberList = () => {
         <DropdownMenuItem onClick={() => router.push(`/${locale}/account`)}>
           {t("account")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={async () => signOutAction()}>
+        <DropdownMenuItem onClick={async () => mutate()}>
           {t("signOut")}
         </DropdownMenuItem>
       </DropdownMenuGroup>

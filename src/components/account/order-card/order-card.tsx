@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent } from "../../ui/card";
-import { ProductCardProps } from "../../product-card";
 import OrderedProductCard from "./ordered-product-card";
 import OrderCardHeader from "./order-card-header";
 import OrderCardFooter from "./order-card-footer";

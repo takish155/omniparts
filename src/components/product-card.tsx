@@ -14,7 +14,7 @@ export type ProductCardProps = {
 
 const ProductCard = ({
   data,
-  className = "w-[280px] h-[50vh] mb-8",
+  className = "w-[280px] h-[400px] mb-8",
   priorityImage = false,
   isAdminProduct = false,
 }: {

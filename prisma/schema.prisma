@@ -18,6 +18,7 @@ model User {
   updatedAt      DateTime        @updatedAt
   username       String?         @unique
   role           String          @default("user")
+  preferedLang   String          @default("en")
   accounts       Account[]
   Authenticator  Authenticator[]
   reviews        ProductReview[]

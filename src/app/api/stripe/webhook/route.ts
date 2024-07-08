@@ -1,11 +1,16 @@
 import { headers } from "next/headers";
 import Stripe from "stripe";
 import prisma from "../../db";
+import { Resend } from "resend";
+import EmailOrderEN from "@/../emails/en/order-card";
+import EmailOrderJA from "../../../../../emails/ja/order-card";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   typescript: true,
   apiVersion: "2024-04-10",
 });
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const POST = async (req: Request) => {
   const body = await req.text();
@@ -79,9 +84,58 @@ export const POST = async (req: Request) => {
 
         await Promise.all(quantityToDeduct);
 
+        const user = await prisma.user.findFirst({
+          where: { email: checkoutSession.customer_email! },
+        });
+        if (!user || user.preferedLang === "en") {
+          await resend.emails.send({
+            from: "Omniparts <omniparts@takish155.dev>",
+            to: order.email,
+            subject: "Order Confirmation",
+            react: EmailOrderEN({
+              name: order.fullName,
+              addressLine1: order.addressLine1,
+              orderId: order.id,
+              addressLine2: order.addressLine2,
+              postalCode: order.postalCode,
+              prefecture: order.prefecture,
+              url: process.env.NEXT_PUBLIC_BASE_URL!,
+              orderedProduct: items.data.map((item) => ({
+                name: item.description,
+                quantity: item.quantity!,
+                id: item.id,
+                price: item.amount_total,
+              })),
+            }),
+          });
+        }
+
+        if (user && user.preferedLang === "ja") {
+          await resend.emails.send({
+            from: "Omniparts <omniparts@takish155.dev>",
+            to: order.email,
+            subject: "Order Confirmation",
+            react: EmailOrderJA({
+              name: order.fullName,
+              addressLine1: order.addressLine1,
+              orderId: order.id,
+              addressLine2: order.addressLine2,
+              postalCode: order.postalCode,
+              prefecture: order.prefecture,
+              url: process.env.NEXT_PUBLIC_BASE_URL!,
+              orderedProduct: items.data.map((item) => ({
+                name: item.description,
+                quantity: item.quantity!,
+                id: item.id,
+                price: item.amount_total,
+              })),
+            }),
+          });
+        }
+
         return Response.json({ status: 200, message: "real it worked!" });
       } catch (error) {
-        console.log(error);
+        console.log("AN ERROR OCCURED");
       }
 
       break;

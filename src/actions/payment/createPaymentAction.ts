@@ -94,15 +94,11 @@ const createPaymentAction = async (products: CreatePaymentProduct[]) => {
       customer_email: session?.user!.email!,
     });
 
-    console.log(paymentSession.amount_total);
-    console.log(paymentSession.object);
     const items = await stripe.checkout.sessions.listLineItems(
       paymentSession.id
     );
-    console.log(items.data);
     productUrl = paymentSession.url;
   } catch (error) {
-    console.log(error);
     return { status: 500 };
   }
   if (isStockError) {

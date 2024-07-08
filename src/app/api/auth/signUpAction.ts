@@ -5,7 +5,7 @@ import {
   signUpSchema,
 } from "@/app/schema/account/authSchema";
 import prisma from "../db";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import bcrypt from "bcryptjs";
 import signInAction from "./signInAction";
 import { redirect } from "next/navigation";
@@ -37,12 +37,14 @@ const signUpAction = async (data: SignUpSchemaType) => {
       throw new Error(t("emailTakenError"));
     }
 
+    const locale = await getLocale();
     const hashedPassword = await bcrypt.hash(password, 10);
     await prisma.user.create({
       data: {
         username,
         email,
         hashedPassword,
+        preferedLang: locale,
       },
     });
 
@@ -50,7 +52,6 @@ const signUpAction = async (data: SignUpSchemaType) => {
     return { message: t("signUpComplete"), status: 200 };
   } catch (error) {
     if (error instanceof Error) {
-      console.log(error.message);
       return { message: error.message, status: 400 };
     }
     return { message: "An error occurred", status: 500 };

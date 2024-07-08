@@ -22,7 +22,6 @@ const UpdateOrderStatusForm = () => {
     useHandleUpdateOrderContext() || {};
 
   const orderStatus = ["processing", "shipped", "delivered", "cancelled"];
-  console.log("I was rendered!");
 
   return (
     <form onSubmit={handleSubmit}>

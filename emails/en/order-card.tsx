@@ -8,7 +8,7 @@ import {
   Button,
 } from "@react-email/components";
 import * as React from "react";
-import Template from "../template";
+import Template from "../templates/template";
 
 export type SendOrderEmailProps = {
   name: string;

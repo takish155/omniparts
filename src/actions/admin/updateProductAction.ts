@@ -45,6 +45,7 @@ const updateProductAction = async (data: AddProductSchemaType, id: string) => {
         productPrice: data.productPrice,
         year: data.year,
         slug: data.slug,
+        productDetailsJA: data.productDetailsJapanese,
       },
     });
     const updateStripeProduct = stripe.products.update(id, {

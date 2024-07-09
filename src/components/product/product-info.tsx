@@ -36,6 +36,7 @@ const ProductInfo = ({
       />
       <ProductDetails
         productDetails={data.productDetails}
+        productDetailsJapanese={data.productDetailsJapanese}
         specifications={{
           brand: data.productBrand,
           category: data.productCategory,

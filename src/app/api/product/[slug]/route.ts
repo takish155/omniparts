@@ -26,6 +26,7 @@ export async function GET(
         quantity: product.currentStock,
         year: product.year,
         specification: product.specifications,
+        productDetailsJapanese: product.productDetailsJA,
       },
     });
   } catch (error) {

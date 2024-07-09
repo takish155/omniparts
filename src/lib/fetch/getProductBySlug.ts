@@ -5,6 +5,7 @@ export const getProductBySlug = async (slug: string) => {
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/product/${slug}`,
     {
       cache: "force-cache",
+      next: { tags: ["products"] },
     }
   );
   const data: API_Product = await response.json();

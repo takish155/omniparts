@@ -11,6 +11,9 @@ export const addProductSchema = z.object({
     .min(1, { message: "productPriceError" })
     .max(100000000, { message: "productPriceError" }),
   productDetails: z.string().max(2000, { message: "productDetailsError" }),
+  productDetailsJapanese: z
+    .string()
+    .max(2000, { message: "productDetailsError" }),
   productCategory: z.string().max(20, { message: "productCategoryError" }),
   slug: z
     .string()

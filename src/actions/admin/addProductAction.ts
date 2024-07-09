@@ -32,6 +32,7 @@ const addProductAction = async (data: AddProductSchemaType) => {
         productName: data.productName,
         currentStock: data.currentStock,
         productPrice: data.productPrice,
+        productDetailsJA: data.productDetailsJapanese,
         year: data.year,
         slug: data.slug,
       },

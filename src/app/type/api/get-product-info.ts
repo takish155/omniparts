@@ -18,6 +18,7 @@ export interface ProductInfoProps {
   quantity: number;
   year: number;
   specification: Specification;
+  productDetailsJapanese: string | null;
 }
 
 export type API_Product =

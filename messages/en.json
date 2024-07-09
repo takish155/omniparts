@@ -30,7 +30,10 @@
     "searchSomething": "Search PC parts...",
     "outOfStockDescription": "It seems that this product is out of stock, If possible, try lowering the quantity or contact support for more information.",
     "signOutSuccess": "Sign out success!",
-    "signOutError": "Sign out failed, please try again."
+    "signOutError": "Sign out failed, please try again.",
+    "language": "Language",
+    "english": "English",
+    "japanese": "Japanese"
   },
   "categories": {
     "cpu": "CPU",
@@ -215,7 +218,7 @@
     "productNameMaxError": "Product name must be at most 50 characters",
     "productPrice": "Product Price",
     "productPriceError": "Product price is required",
-    "productDetails": "Product Details",
+    "productDetails": "Product Details (English)",
     "productDetailsError": "Product details must be at most 2000 characters",
     "productCategory": "Product Category",
     "productCategoryError": "Product category is required",
@@ -247,7 +250,8 @@
     "specificationValue": "Specification Value",
     "addSpecification": "Add Specification",
     "productUpdated": "Product updated!",
-    "update": "Update"
+    "update": "Update",
+    "productDetailsJapanese": "Product Details (Japanese)"
   },
   "PageMessages": {
     "orderCancelledTitle": "Oopss! <span>Your order has been cancelled</span>",
@@ -260,6 +264,7 @@
     "orderSuccess": "Order Success",
     "orderSuccessDescription": "Your order has been successfully placed. Check your account for more information.",
     "pageNotFound": "404 Page Not Found",
+    "retry": "Retry",
     "pageNotFoundDescription": "Sorry, the page you are looking for is not found. Check if the url is correct or try again later."
   },
   "AdminProductPage": {

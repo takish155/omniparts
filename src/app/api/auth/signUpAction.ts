@@ -8,7 +8,13 @@ import prisma from "../db";
 import { getLocale, getTranslations } from "next-intl/server";
 import bcrypt from "bcryptjs";
 import signInAction from "./signInAction";
-import { redirect } from "next/navigation";
+import { Resend } from "resend";
+import VerifyEmailEN from "../../../../emails/en/verify-email";
+import VerifyEmailJA from "../../../../emails/ja/verify-email";
+import { v4 as uuidv4 } from "uuid";
+import createVerificationToken from "./createVerificationToken";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const signUpAction = async (data: SignUpSchemaType) => {
   try {
@@ -39,7 +45,7 @@ const signUpAction = async (data: SignUpSchemaType) => {
 
     const locale = await getLocale();
     const hashedPassword = await bcrypt.hash(password, 10);
-    await prisma.user.create({
+    const user = await prisma.user.create({
       data: {
         username,
         email,
@@ -47,6 +53,14 @@ const signUpAction = async (data: SignUpSchemaType) => {
         preferedLang: locale,
       },
     });
+
+    await createVerificationToken(
+      user.id,
+      user.username!,
+      user.email,
+      locale,
+      t("emailVerification")
+    );
 
     await signInAction({ username, password });
     return { message: t("signUpComplete"), status: 200 };

@@ -88,7 +88,8 @@
     "usernameTakenError": "Username is already taken",
     "emailTakenError": "Email is already taken",
     "signUpComplete": "Sign up complete!",
-    "signUpFailed": "Sign up failed"
+    "signUpFailed": "Sign up failed",
+    "emailVerification": "Email verification"
   },
   "ForgotPasswordPage": {
     "forgotPassword": "Forgot Password",
@@ -257,6 +258,8 @@
     "orderCancelledTitle": "Oopss! <span>Your order has been cancelled</span>",
     "orderCancelledDescription": "Your order has been cancelled. Try ordering again or contact support for more information.",
     "returnHome": "Return Home",
+    "verifyYourEmail": "Verify your email",
+    "verifyYourEmailDescription": "Please verify your email to start purchasing products in our store.",
     "contactSupport": "Contact Support",
     "productNotFound": "Sorry, the product you are looking for is not found, check if the url is correct or try again later.",
     "500title": "500 Internal Server Error",
@@ -265,7 +268,14 @@
     "orderSuccessDescription": "Your order has been successfully placed. Check your account for more information.",
     "pageNotFound": "404 Page Not Found",
     "retry": "Retry",
-    "pageNotFoundDescription": "Sorry, the page you are looking for is not found. Check if the url is correct or try again later."
+    "emailAlreadyVerified": "emailAlreadyVerified",
+    "emailVerification": "Email verification",
+    "userNotFound": "User not found",
+    "pageNotFoundDescription": "Sorry, the page you are looking for is not found. Check if the url is correct or try again later.",
+    "notLoggedIn": "Not Logged In",
+    "resendEmail": "Resend email",
+    "verificationEmailSent": "Verification email sent",
+    "tokenNotFound": "Token not found, make sure the url is correct"
   },
   "AdminProductPage": {
     "title": "Products",

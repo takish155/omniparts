@@ -88,7 +88,13 @@
     "usernameTakenError": "ユーザー名は既に使用されています",
     "emailTakenError": "メールは既に使用されています",
     "signUpComplete": "会員登録完了！",
-    "signUpFailed": "会員登録失敗"
+    "signUpFailed": "会員登録失敗",
+    "emailVerification": "メール認証",
+    "notLoggedIn": "ログインしていません",
+    "emailAlreadyVerified": "メールは既に確認されています",
+    "verifyYourEmail": "メールを確認してアカウントを有効にしてください。",
+    "userNotFound": "ユーザーが見つかりません",
+    "verifyYourEmailDescription": "アカウントを有効にするには、メール内のリンクをクリックしてください。メールが届かない場合は、スパムフォルダを確認してください。"
   },
   "ForgotPasswordPage": {
     "forgotPassword": "パスワードを忘れました",
@@ -265,6 +271,12 @@
     "orderSuccessDescription": "注文が正常に処理されました。詳細はアカウントを確認してください。",
     "pageNotFound": "404 ページが見つかりません",
     "retry": "再試行",
+    "emailVerification": "メール認証",
+    "resendEmail": "メールを再送信",
+    "verifyYourEmailDescription": "アカウントを有効にするには、メール内のリンクをクリックしてください。メールが届かない場合は、スパムフォルダを確認してください。",
+    "verifyYourEmail": "メールを確認してアカウントを有効にしてください。",
+    "tokenNotFound": "トークンが見つかりません、もう一度試してください。",
+    "verificationEmailSent": "確認メールが送信されました",
     "pageNotFoundDescription": "申し訳ありませんが、探しているページが見つかりません。URLが正しいか確認するか、後でもう一度試してください。"
   },
   "AdminProductPage": {

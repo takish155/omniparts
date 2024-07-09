@@ -69,7 +69,7 @@ export default function EmailOrderEN({
 }: SendOrderEmailProps) {
   return (
     <Template>
-      <Section className="mb-4 ">
+      <Section className="mb-4">
         <Heading className="text-lg">Hi, {name ?? "Takeshi"}!</Heading>
         <Text>Thank you for shopping in Omniparts.</Text>
       </Section>

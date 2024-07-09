@@ -114,7 +114,7 @@ export const POST = async (req: Request) => {
           await resend.emails.send({
             from: "Omniparts <omniparts@takish155.dev>",
             to: order.email,
-            subject: "Order Confirmation",
+            subject: "注文確認",
             react: EmailOrderJA({
               name: order.fullName,
               addressLine1: order.addressLine1,

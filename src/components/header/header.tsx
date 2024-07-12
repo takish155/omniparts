@@ -15,7 +15,7 @@ const Header = () => {
         </h1>
         <PCNav />
       </div>
-      <nav className="flex items-center gap-4 max-sm:gap-1">
+      <nav className="flex items-center gap-4">
         <Cart />
         <AccoountNav />
         <SwitchLanguage />

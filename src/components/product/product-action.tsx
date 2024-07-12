@@ -8,16 +8,26 @@ import useHandleProductAction from "@/hooks/useHandleProductAction";
 import ProductStock from "./product-stock";
 import { useSession } from "@/context/SessionProvider";
 import { useRouter } from "next/navigation";
+import ProductActionSkeleton from "./skeleton/product-action-skeleton";
 
 const ProductAction = ({ data }: { data: Cart }) => {
-  const { t, mutate, isPending } = useHandleProductAction(data.slug);
+  const {
+    t,
+    mutate,
+    isPending,
+    data: stock,
+    isLoading,
+    isError,
+  } = useHandleProductAction(data.slug);
   const { addProduct } = useCartStore();
   const router = useRouter();
   const session = useSession();
 
+  if (isLoading) return <ProductActionSkeleton />;
+
   return (
     <>
-      <ProductStock slug={data.slug} />
+      <ProductStock stock={stock?.currentStock!} />
       <section className="flex justify-between mb-16">
         <Button
           className="w-[45%]"
@@ -25,12 +35,17 @@ const ProductAction = ({ data }: { data: Cart }) => {
             addProduct(data, data.quantity);
             toast.success(t("success"), { description: t("productAdded") });
           }}
+          disabled={
+            isPending || !stock?.currentStock || stock?.currentStock <= 0
+          }
         >
           {t("addToCard")}
         </Button>
         <Button
           className="w-[45%]"
-          disabled={isPending}
+          disabled={
+            isPending || !stock?.currentStock || stock?.currentStock <= 0
+          }
           variant={"secondary"}
           onClick={() => {
             if (!session) {

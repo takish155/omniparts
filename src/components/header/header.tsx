@@ -4,6 +4,7 @@ import PCNav from "./pc-nav";
 import MobileNav from "./mobile-nav";
 import AccoountNav from "./account-nav";
 import Cart from "./cart";
+import SwitchLanguage from "./switch-language";
 
 const Header = () => {
   return (
@@ -14,9 +15,10 @@ const Header = () => {
         </h1>
         <PCNav />
       </div>
-      <nav className="flex items-center gap-4">
+      <nav className="flex items-center gap-4 max-sm:gap-1">
         <Cart />
         <AccoountNav />
+        <SwitchLanguage />
         <MobileNav />
       </nav>
     </header>

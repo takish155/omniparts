@@ -28,9 +28,9 @@ const FeaturedSection = ({
   return (
     <article>
       {!noHero && <FeaturedSectionHero data={heroData!} />}
-      <section className="w-[90%] mx-auto mb-12">
+      <section className="w-[95%] mx-auto mb-12">
         <h3 className="text-3xl font-medium mb-4">{title}</h3>
-        <section className="flex flex-wrap justify-evenly">
+        <section className="flex overflow-x-scroll 2xl:overflow-x-hidden overflow-y-hidden justify-evenly items-center gap-8">
           {data.map((product) => {
             return (
               <ProductCard
@@ -46,12 +46,12 @@ const FeaturedSection = ({
             );
           })}
         </section>
-        <div className="flex justify-end mb-8">
-          <LocaleLink href={showMoreLink} passHref={true}>
-            <Button>{t("showMore")}</Button>
-          </LocaleLink>
-        </div>
       </section>
+      <div className="flex justify-end mb-8">
+        <LocaleLink href={showMoreLink} passHref={true}>
+          <Button className="mr-4">{t("showMore")}</Button>
+        </LocaleLink>
+      </div>
     </article>
   );
 };

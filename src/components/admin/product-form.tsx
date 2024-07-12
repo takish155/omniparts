@@ -141,6 +141,21 @@ const ProductForm = ({
       <InputContainer
         data={{
           error:
+            errors.productDetails?.message &&
+            t(errors.productDetails?.message as AddProductErrors),
+          htmlFor: "productDetailsJapanese",
+          label: t("productDetailsJapanese"),
+          input: (
+            <Textarea
+              {...register("productDetailsJapanese")}
+              defaultValue={data?.productDetails}
+            />
+          ),
+        }}
+      />
+      <InputContainer
+        data={{
+          error:
             errors.productCategory?.message &&
             t(errors.productCategory?.message as AddProductErrors),
           htmlFor: "productCategory",

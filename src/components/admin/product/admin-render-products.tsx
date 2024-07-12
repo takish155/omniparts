@@ -18,6 +18,7 @@ const AdminRenderProducts = () => {
           return (
             <AdminProductCard
               data={{
+                productDetailsJapanese: product.productDetailsJA ?? "",
                 productImage: product.productImage,
                 productName: product.productName,
                 productPrice: product.productPrice,

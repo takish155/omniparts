@@ -7,14 +7,20 @@ import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 
 const useHandleCheckout = () => {
+  const nv = useTranslations("ProductPage");
+
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: CreatePaymentProduct[]) =>
       createPaymentAction(data),
     onSettled: (res) => {
       if (res?.status === 400) {
-        toast.error(t("outOfStock"), {
-          description: t("outOfStockDescription"),
-        });
+        if (res?.message === "NOT_VERIFIED") {
+          toast.error(nv("notVerified"));
+        }
+        if (res.message === "")
+          toast.error(t("outOfStock"), {
+            description: t("outOfStockDescription"),
+          });
       }
     },
   });

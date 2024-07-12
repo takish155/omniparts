@@ -9,6 +9,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import PageMessage from "@/components/product/product-message";
 import ProductBreadCrumb from "@/components/product/product-breadcrumb";
 import { caller } from "@/server";
+import { Button } from "@/components/ui/button";
+import { revalidateTag } from "next/cache";
 
 const ProductImage = dynamic(
   () => import("@/components/product/product-image"),
@@ -33,8 +35,10 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const translation = getTranslations("PageMessages");
   const [productApiResponse, t] = await Promise.all([productData, translation]);
 
-  if (productApiResponse.status === 404)
+  if (productApiResponse.status === 404) {
+    revalidateTag("products");
     return <PageMessage title={"404"} description={t("productNotFound")} />;
+  }
 
   if (productApiResponse.status === 500)
     return <PageMessage title={"500"} description={t("somethingWentWrong")} />;
@@ -80,7 +84,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: response.data.productName,
+    title: `${response.data.productName} | Omniparts`,
     description: response.data.productDetails,
   };
 }

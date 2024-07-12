@@ -11,6 +11,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { auth } from "../api/auth/auth";
 import { SessionProvider } from "@/context/SessionProvider";
 import "@uploadthing/react/styles.css";
+import dynamic from "next/dynamic";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -18,8 +19,13 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "PCPartHaven",
+  title: "Omniparts",
 };
+
+const AlertVerifyEmail = dynamic(
+  () => import("@/components/alert-verify-email"),
+  { ssr: false }
+);
 
 export default async function RootLayout({
   children,
@@ -36,16 +42,17 @@ export default async function RootLayout({
   return (
     <html lang={params.locale}>
       <body className={roboto.className}>
-        <QueryProvider>
-          <SessionProvider session={session}>
-            <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
+          <QueryProvider>
+            <SessionProvider session={session}>
               <Header />
+              {session && <AlertVerifyEmail />}
               {children}
               <Toaster />
               <Footer />
-            </NextIntlClientProvider>
-          </SessionProvider>
-        </QueryProvider>
+            </SessionProvider>
+          </QueryProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

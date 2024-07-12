@@ -8,20 +8,20 @@ datasource db {
 }
 
 model User {
-  id             String          @id @default(cuid())
-  name           String?
-  email          String          @unique
-  emailVerified  DateTime?
-  hashedPassword String?
-  image          String?
-  createdAt      DateTime        @default(now())
-  updatedAt      DateTime        @updatedAt
-  username       String?         @unique
-  role           String          @default("user")
-  accounts       Account[]
-  Authenticator  Authenticator[]
-  reviews        ProductReview[]
-  sessions       Session[]
+  id               String              @id @default(cuid())
+  email            String              @unique
+  emailVerified    DateTime?
+  hashedPassword   String?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  username         String?             @unique
+  role             String              @default("user")
+  preferedLang     String              @default("en")
+  verifcationToken VerificationToken[]
+  accounts         Account[]
+  Authenticator    Authenticator[]
+  reviews          ProductReview[]
+  sessions         Session[]
 }
 
 model Account {
@@ -53,11 +53,12 @@ model Session {
 }
 
 model VerificationToken {
-  identifier String
-  token      String
-  expires    DateTime
-
-  @@id([identifier, token])
+  id        String   @id @default(cuid())
+  token     String   @unique
+  expires   DateTime
+  userId    String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Authenticator {

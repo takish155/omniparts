@@ -30,7 +30,10 @@
     "searchSomething": "Search PC parts...",
     "outOfStockDescription": "It seems that this product is out of stock, If possible, try lowering the quantity or contact support for more information.",
     "signOutSuccess": "Sign out success!",
-    "signOutError": "Sign out failed, please try again."
+    "signOutError": "Sign out failed, please try again.",
+    "language": "Language",
+    "english": "English",
+    "japanese": "Japanese"
   },
   "categories": {
     "cpu": "CPU",
@@ -51,7 +54,9 @@
     "showMore": "Show More",
     "recommendedGPU": "Recommended GPU",
     "recommendedCPU": "Recommended CPU",
-    "recommendedPartsForYou": "Recommended Parts For You"
+    "recommendedPartsForYou": "Recommended Parts For You",
+    "metaTitle": "Omniparts - The best place to buy PC parts",
+    "metaDescription": "Omniparts is the best place to buy PC parts, from the fastest CPU to the most powerful GPU. We have everything you need to build your dream PC."
   },
   "SignInPage": {
     "signIn": "Sign In",
@@ -85,7 +90,8 @@
     "usernameTakenError": "Username is already taken",
     "emailTakenError": "Email is already taken",
     "signUpComplete": "Sign up complete!",
-    "signUpFailed": "Sign up failed"
+    "signUpFailed": "Sign up failed",
+    "emailVerification": "Email verification"
   },
   "ForgotPasswordPage": {
     "forgotPassword": "Forgot Password",
@@ -95,6 +101,8 @@
     "rememberPassword": "Remember your password?"
   },
   "DiscoverPage": {
+    "metaTitle": "Discover Products | Omniparts",
+    "metaDescription": "Discover the best parts for your PC build, from the fastest CPU to the most powerful GPU. from the most reliable storage to the most efficient cooling fans.",
     "title": "Discover",
     "description": "Discover the best parts for your PC build, from the fastest CPU to the most powerful GPU. from the most reliable storage to the most efficient cooling fans.",
     "categoies": "Categories",
@@ -142,7 +150,9 @@
     "noReviewYet": "This product has no review yet",
     "discover": "Discover",
     "loginToBuy": "Login to buy this product",
-    "home": "Home"
+    "home": "Home",
+    "outOfStock": "Temporarily out of stock, We will restock soon!",
+    "notVerified": "Email not verified, please verify your email to buy this product"
   },
   "AccountNav": {
     "account": "Account",
@@ -192,7 +202,8 @@
     "passwordMismatchError": "Passwords do not match",
     "currentPassword": "Current Password",
     "newPassword": "New Password",
-    "confirmPassword": "Confirm Password"
+    "confirmPassword": "Confirm Password",
+    "emailVerification": "Email verification"
   },
   "AdminPage": {
     "title": "Admin Panel",
@@ -215,7 +226,7 @@
     "productNameMaxError": "Product name must be at most 50 characters",
     "productPrice": "Product Price",
     "productPriceError": "Product price is required",
-    "productDetails": "Product Details",
+    "productDetails": "Product Details (English)",
     "productDetailsError": "Product details must be at most 2000 characters",
     "productCategory": "Product Category",
     "productCategoryError": "Product category is required",
@@ -247,12 +258,15 @@
     "specificationValue": "Specification Value",
     "addSpecification": "Add Specification",
     "productUpdated": "Product updated!",
-    "update": "Update"
+    "update": "Update",
+    "productDetailsJapanese": "Product Details (Japanese)"
   },
   "PageMessages": {
     "orderCancelledTitle": "Oopss! <span>Your order has been cancelled</span>",
     "orderCancelledDescription": "Your order has been cancelled. Try ordering again or contact support for more information.",
     "returnHome": "Return Home",
+    "verifyYourEmail": "Verify your email",
+    "verifyYourEmailDescription": "Please verify your email to start purchasing products in our store.",
     "contactSupport": "Contact Support",
     "productNotFound": "Sorry, the product you are looking for is not found, check if the url is correct or try again later.",
     "500title": "500 Internal Server Error",
@@ -260,7 +274,20 @@
     "orderSuccess": "Order Success",
     "orderSuccessDescription": "Your order has been successfully placed. Check your account for more information.",
     "pageNotFound": "404 Page Not Found",
-    "pageNotFoundDescription": "Sorry, the page you are looking for is not found. Check if the url is correct or try again later."
+    "retry": "Retry",
+    "emailAlreadyVerified": "emailAlreadyVerified",
+    "emailVerification": "Email verification",
+    "userNotFound": "User not found",
+    "pageNotFoundDescription": "Sorry, the page you are looking for is not found. Check if the url is correct or try again later.",
+    "notLoggedIn": "Not Logged In",
+    "resendEmail": "Resend email",
+    "verificationEmailSent": "Verification email sent",
+    "tokenNotFound": "Token not found, make sure the url is correct",
+    "changeEmail": "Change Email",
+    "emailVerifiedSuccessDescription": "Your email has been verified successfully, you can now start purchasing products in our store.",
+    "emailVerifiedSuccess": "Email Verified",
+    "tokenExpiredOrInvalid": "Token is expired or invalid, Please try getting a new token again.",
+    "footer": "Portfolio Project from <link>takish155.dev</link>"
   },
   "AdminProductPage": {
     "title": "Products",

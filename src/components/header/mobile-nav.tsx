@@ -20,7 +20,7 @@ const MobileNav = () => {
         <MenuIcon size={20} />
         <p className="sr-only">{t("toggleMenubar")}</p>
       </SheetTrigger>
-      <SheetContent className="">
+      <SheetContent className="bg-gray-950 text-white">
         <ul className="pt-8">
           {auth ? <MobileAuthLinks /> : <MobileGuestLink />}
           {categories.map((link) => {

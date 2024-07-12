@@ -6,8 +6,9 @@ import {
   UpdateEmailSchemaType,
   updateEmailSchema,
 } from "@/app/schema/account/updateEmailSchema";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import bcrypt from "bcryptjs";
+import createVerificationToken from "@/app/api/auth/createVerificationToken";
 
 export const updateEmailAction = async (data: UpdateEmailSchemaType) => {
   try {
@@ -50,8 +51,17 @@ export const updateEmailAction = async (data: UpdateEmailSchemaType) => {
 
     await prisma.user.update({
       where: { id: session.user?.id },
-      data: { email: data.newEmail },
+      data: { email: data.newEmail, emailVerified: null },
     });
+
+    const locale = await getLocale();
+    await createVerificationToken(
+      user.id,
+      user.username!,
+      data.newEmail,
+      locale,
+      t("emailVerification")
+    );
 
     return { message: t("emailUpdated"), status: 200 };
   } catch (error) {

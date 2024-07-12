@@ -19,7 +19,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "PCPartHaven",
+  title: "Omniparts",
 };
 
 const AlertVerifyEmail = dynamic(
@@ -46,7 +46,7 @@ export default async function RootLayout({
           <QueryProvider>
             <SessionProvider session={session}>
               <Header />
-              {/* {session && <AlertVerifyEmail />} */}
+              {session && <AlertVerifyEmail />}
               {children}
               <Toaster />
               <Footer />

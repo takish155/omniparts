@@ -6,8 +6,8 @@ import { auth } from "@/app/api/auth/auth";
 export const t = initTRPC.create();
 
 export const router = t.router;
-export const publicProcedure = t.procedure;
 export type RouterOuput = inferRouterOutputs<AppRouter>;
+export const publicProcedure = t.procedure;
 
 export const authenticatedProcedure = t.procedure.use(async (opts) => {
   const session = await auth();

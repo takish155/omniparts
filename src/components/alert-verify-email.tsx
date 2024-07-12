@@ -9,9 +9,12 @@ import { useMutation } from "@tanstack/react-query";
 import sendVerificationEmailAction from "@/actions/account/sendVerificationEmailAction";
 import { toast } from "sonner";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const AlertVerifyEmail = () => {
   const t = useTranslations("PageMessages");
+  const router = useRouter();
+
   const { data, isLoading, isError } =
     trpc.account.isAccountVerified.useQuery();
   const { mutate, isPending } = useMutation({
@@ -33,9 +36,18 @@ const AlertVerifyEmail = () => {
       <AlertTitle>{t("verifyYourEmail")}</AlertTitle>
       <AlertDescription className="flex flex-wrap justify-between items-center gap-4">
         <p>{t("verifyYourEmailDescription")}</p>
-        <Button disabled={isPending} onClick={() => mutate()}>
-          {t("resendEmail")}
-        </Button>
+        <div className="flex gap-4">
+          <Button disabled={isPending} size={"sm"} onClick={() => mutate()}>
+            {t("resendEmail")}
+          </Button>
+          <Button
+            size={"sm"}
+            onClick={() => router.push("/account/account-security")}
+            variant={"outline"}
+          >
+            {t("changeEmail")}
+          </Button>
+        </div>
       </AlertDescription>
     </Alert>
   );

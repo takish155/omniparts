@@ -54,7 +54,9 @@
     "showMore": "Show More",
     "recommendedGPU": "Recommended GPU",
     "recommendedCPU": "Recommended CPU",
-    "recommendedPartsForYou": "Recommended Parts For You"
+    "recommendedPartsForYou": "Recommended Parts For You",
+    "metaTitle": "Omniparts - The best place to buy PC parts",
+    "metaDescription": "Omniparts is the best place to buy PC parts, from the fastest CPU to the most powerful GPU. We have everything you need to build your dream PC."
   },
   "SignInPage": {
     "signIn": "Sign In",
@@ -99,6 +101,8 @@
     "rememberPassword": "Remember your password?"
   },
   "DiscoverPage": {
+    "metaTitle": "Discover Products | Omniparts",
+    "metaDescription": "Discover the best parts for your PC build, from the fastest CPU to the most powerful GPU. from the most reliable storage to the most efficient cooling fans.",
     "title": "Discover",
     "description": "Discover the best parts for your PC build, from the fastest CPU to the most powerful GPU. from the most reliable storage to the most efficient cooling fans.",
     "categoies": "Categories",
@@ -146,7 +150,9 @@
     "noReviewYet": "This product has no review yet",
     "discover": "Discover",
     "loginToBuy": "Login to buy this product",
-    "home": "Home"
+    "home": "Home",
+    "outOfStock": "Temporarily out of stock, We will restock soon!",
+    "notVerified": "Email not verified, please verify your email to buy this product"
   },
   "AccountNav": {
     "account": "Account",
@@ -196,7 +202,8 @@
     "passwordMismatchError": "Passwords do not match",
     "currentPassword": "Current Password",
     "newPassword": "New Password",
-    "confirmPassword": "Confirm Password"
+    "confirmPassword": "Confirm Password",
+    "emailVerification": "Email verification"
   },
   "AdminPage": {
     "title": "Admin Panel",
@@ -275,7 +282,12 @@
     "notLoggedIn": "Not Logged In",
     "resendEmail": "Resend email",
     "verificationEmailSent": "Verification email sent",
-    "tokenNotFound": "Token not found, make sure the url is correct"
+    "tokenNotFound": "Token not found, make sure the url is correct",
+    "changeEmail": "Change Email",
+    "emailVerifiedSuccessDescription": "Your email has been verified successfully, you can now start purchasing products in our store.",
+    "emailVerifiedSuccess": "Email Verified",
+    "tokenExpiredOrInvalid": "Token is expired or invalid, Please try getting a new token again.",
+    "footer": "Portfolio Project from <link>takish155.dev</link>"
   },
   "AdminProductPage": {
     "title": "Products",

@@ -54,7 +54,9 @@
     "showMore": "もっと見る",
     "recommendedGPU": "おすすめのGPU",
     "recommendedCPU": "おすすめのCPU",
-    "recommendedPartsForYou": "あなたにおすすめの部品"
+    "recommendedPartsForYou": "あなたにおすすめの部品",
+    "metaTitle": "Omniparts - 最速のCPU、GPU、マザーボード、RAM、ストレージ、電源ユニット、冷却ファンを手に入れよう",
+    "metaDescription": "Omnipartsは、最速のCPU、GPU、マザーボード、RAM、ストレージ、電源ユニット、冷却ファンを手に入れるための最高の場所です。"
   },
   "SignInPage": {
     "signIn": "ログイン",
@@ -104,6 +106,8 @@
     "rememberPassword": "パスワードを覚えていますか？"
   },
   "DiscoverPage": {
+    "metaTitle": "商品を探す | Omniparts",
+    "metaDescription": "最速のCPUから最強のGPUまで、PCビルドに最適なパーツを見つけよう。最も信頼できるストレージから最も効率的な冷却ファンまで揃っています。",
     "title": "発見",
     "description": "PCビルドに最適な部品を見つけてください。最速のCPUから最強のGPU、最も信頼性のあるストレージから最も効率的な冷却ファンまで。",
     "categoies": "カテゴリー",
@@ -137,12 +141,14 @@
     "storage": "ストレージ",
     "psu": "電源ユニット",
     "cooling_fans": "冷却ファン",
+    "notVerified": "メールが確認されていません。この商品を購入するには、メールを確認してください。",
     "category": "カテゴリー",
     "yearManufactured": "製造年",
     "brand": "ブランド",
     "specifications": "仕様",
     "reviews": "レビュー",
     "success": "成功",
+    "outOfStock": "在庫切れ中です。近日中に再入荷いたします。",
     "productAdded": "製品がカートに追加されました",
     "stockLeft": "{stock}個残り、今すぐ注文！",
     "productBought": "この製品は既に購入済みです",
@@ -201,7 +207,8 @@
     "passwordMismatchError": "パスワードが一致しません",
     "currentPassword": "現在のパスワード",
     "newPassword": "新しいパスワード",
-    "confirmPassword": "パスワードの確認"
+    "confirmPassword": "パスワードの確認",
+    "emailVerification": "メール認証"
   },
   "AdminPage": {
     "title": "管理パネル",
@@ -277,6 +284,10 @@
     "verifyYourEmail": "メールを確認してアカウントを有効にしてください。",
     "tokenNotFound": "トークンが見つかりません、もう一度試してください。",
     "verificationEmailSent": "確認メールが送信されました",
+    "changeEmail": "メールを変更",
+    "emailVerifiedSuccessDescription": "メールアドレスが正常に確認されました。これで、当店のサイトでの商品購入を開始することができます。",
+    "emailVerifiedSuccess": "メールアドレス確認完了",
+    "tokenExpiredOrInvalid": "トークンが期限切れか無効です。もう一度新しいトークンを取得してください。",
     "pageNotFoundDescription": "申し訳ありませんが、探しているページが見つかりません。URLが正しいか確認するか、後でもう一度試してください。"
   },
   "AdminProductPage": {

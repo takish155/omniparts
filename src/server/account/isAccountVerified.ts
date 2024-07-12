@@ -1,5 +1,6 @@
 import prisma from "@/app/api/db";
 import { authenticatedProcedure, router } from "../trpc";
+import { getTranslations } from "next-intl/server";
 
 export const isAccountVerifiedRouter = router({
   isAccountVerified: authenticatedProcedure.query(async ({ ctx }) => {

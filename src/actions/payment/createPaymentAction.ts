@@ -27,6 +27,11 @@ const createPaymentAction = async (products: CreatePaymentProduct[]) => {
     if (!session) {
       throw new Error("UNAUTHORIZED");
     }
+    const isVerified = await caller.account.isAccountVerified();
+    if (!isVerified) {
+      throw new Error("NOT_VERIFIED");
+    }
+
     const stockCheckPromises = products.map(async (product) => {
       const stock = await caller.productPage.getProductStock(product.productId);
       if (stock.currentStock < product.quantity) {
@@ -99,6 +104,11 @@ const createPaymentAction = async (products: CreatePaymentProduct[]) => {
     );
     productUrl = paymentSession.url;
   } catch (error) {
+    if (error instanceof Error) {
+      if (error.message === "NOT_VERIFIED") {
+        return { status: 400, message: "NOT_VERIFIED" };
+      }
+    }
     return { status: 500 };
   }
   if (isStockError) {

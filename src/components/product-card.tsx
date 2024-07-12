@@ -14,7 +14,7 @@ export type ProductCardProps = {
 
 const ProductCard = ({
   data,
-  className = "w-[280px] h-[400px] mb-8",
+  className = "min-w-[280px] max-w-[280px] h-[400px] mb-8",
   priorityImage = false,
   isAdminProduct = false,
 }: {
@@ -75,10 +75,10 @@ const ProductCard = ({
         </div>
         <div>
           <CardHeader>
-            <h3 className="font-semibold text-xl">{data.productName}</h3>
+            <h3 className="font-semibold text-md">{data.productName}</h3>
           </CardHeader>
           <CardContent>
-            <p className="font-semibold text-base">
+            <p className="font-bold text-sm">
               {formatToMoney(data.productPrice, "￥")}
             </p>
           </CardContent>

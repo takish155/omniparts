@@ -18,7 +18,7 @@ const ProductSection = () => {
       return <p className="mt-4 mb-[75vh]">{t("noProducts")}</p>;
     }
     return (
-      <section className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 justify-items-center mx-auto">
+      <section className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 justify-items-center mx-auto gap-8">
         {data.data.map((product) => {
           return <ProductCard key={product.productName} data={product} />;
         })}

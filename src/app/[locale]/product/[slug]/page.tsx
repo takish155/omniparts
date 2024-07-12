@@ -84,7 +84,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: response.data.productName,
+    title: `${response.data.productName} | Omniparts`,
     description: response.data.productDetails,
   };
 }

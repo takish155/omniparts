@@ -3,6 +3,7 @@ import ProductSection from "@/components/discover/sections/product-section";
 import { Separator } from "@/components/ui/separator";
 import { FilterHandlerProvider } from "@/context/FilterHandlerProvider";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import React from "react";
 
 const DiscoverPage = () => {
@@ -21,5 +22,14 @@ const DiscoverPage = () => {
     </main>
   );
 };
+
+export async function generateMetadata() {
+  const t = await getTranslations("DiscoverPage");
+
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  };
+}
 
 export default DiscoverPage;

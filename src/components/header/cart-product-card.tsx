@@ -10,11 +10,9 @@ import { Skeleton } from "../ui/skeleton";
 
 const CartProductCard = ({ data }: { data: Cart }) => {
   const t = useTranslations("header");
-  const {
-    data: stock,
-    isLoading,
-    refetch,
-  } = trpc.productPage.getProductStock.useQuery(data.slug);
+  const { data: stock, isLoading } = trpc.productPage.getProductStock.useQuery(
+    data.slug
+  );
   const { addQuantity, lowerQuantity } = useCartStore();
   if (isLoading) return <Skeleton className="w-full h-[20vh] mb-6" />;
 
@@ -62,9 +60,11 @@ const CartProductCard = ({ data }: { data: Cart }) => {
           </div>
         </div>
         <p className="text-red-600 font-medium text-right text-sm mb-4">
-          {t("stockLeft", {
-            stock: stock?.currentStock,
-          })}
+          {stock?.currentStock! <= 0
+            ? t("outOfStock")
+            : t("stockLeft", {
+                stock: stock?.currentStock,
+              })}
         </p>
       </CardHeader>
     </Card>

@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import createIntlMiddleware from "next-intl/middleware";
 import { auth } from "@/app/api/auth/auth";
-import { redirect } from "next/navigation";
+import { checkIsProductPage } from "./utils/middleware/checkIsProductPage";
+import { checkIsVerificationPage } from "./utils/middleware/checkIsVerificationPage";
 
 const defaultLocale = "ja";
 const localePrefix = "always";
@@ -24,7 +25,6 @@ const intlMiddleware = createIntlMiddleware({
 });
 
 const authMiddleware = auth((req) => {
-  // private routes here
   const session = req.auth;
   if (!session) {
     return NextResponse.redirect(new URL("/account/signin", req.url));
@@ -41,22 +41,22 @@ export default function middleware(req: NextRequest) {
       .join("|")})/?$`,
     "i"
   );
-  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
+  const pathname = req.nextUrl.pathname;
+  const isPublicPage = publicPathnameRegex.test(pathname);
 
-  const reqUrl = req.nextUrl.pathname.split("/");
-  reqUrl.shift();
-
-  if (reqUrl.length === 3 && reqUrl[1] === "product") {
+  if (
+    isPublicPage ||
+    checkIsProductPage(pathname) ||
+    checkIsVerificationPage(pathname)
+  ) {
     return intlMiddleware(req);
   }
 
-  if (isPublicPage) {
-    return intlMiddleware(req);
-  } else {
-    return (authMiddleware as any)(req);
-  }
+  return (authMiddleware as any)(req);
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico|apple-touch-icon.png|favicon.svg|images/books|icons|manifest).*)",
+  ],
 };

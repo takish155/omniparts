@@ -3,43 +3,74 @@ import { publicProcedure, router } from "../trpc";
 import prisma from "@/app/api/db";
 import { TRPCError } from "@trpc/server";
 import { getTranslations } from "next-intl/server";
+import bcrypt from "bcryptjs";
 
 export const verifyTokenIdRouter = router({
   verifyTokenId: publicProcedure
-    .input(z.string().uuid())
+    .input(
+      z.object({
+        tokenId: z.string().uuid(),
+        username: z.string().min(3).max(10),
+      })
+    )
     .query(async ({ input }) => {
       try {
-        const tokens = await prisma.verificationToken.findUnique({
-          where: { token: input },
-        });
         const t = await getTranslations("PageMessages");
 
-        if (!tokens)
+        const user = await prisma.user.findUnique({
+          where: { username: input.username },
+          select: { verifcationToken: true },
+        });
+
+        if (!user?.verifcationToken)
           throw new TRPCError({
             code: "NOT_FOUND",
             message: t("tokenNotFound"),
             cause: "TOKEN_NOT_FOUND",
           });
 
-        if (tokens.expires < new Date()) {
+        const unexpiredToken = user.verifcationToken.filter((token) => {
+          return token.expires > new Date();
+        });
+        if (!unexpiredToken) {
           throw new TRPCError({
             code: "BAD_REQUEST",
-            message: "TOKEN_EXPIRED",
+            message: t("tokenExpiredOrInvalid"),
           });
         }
 
-        await prisma.user.update({
-          where: { id: tokens.userId },
+        let validToken;
+
+        for (const token of unexpiredToken) {
+          const isValid = await bcrypt.compare(input.tokenId, token.token);
+          if (isValid) {
+            validToken = token;
+            break;
+          }
+        }
+        if (!validToken) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: t("tokenNotFound"),
+          });
+        }
+
+        const updatedUser = await prisma.user.update({
+          where: { username: input.username },
           data: { emailVerified: new Date() },
         });
 
-        await prisma.verificationToken.delete({
-          where: { token: input },
+        await prisma.verificationToken.deleteMany({
+          where: { userId: updatedUser.id },
         });
+
+        return { status: 200, message: t("emailVerifiedSuccessDescription") };
       } catch (error) {
         if (error instanceof TRPCError) {
           throw error;
         }
+
+        console.log(error);
 
         throw new TRPCError({
           code: "INTERNAL_SERVER_ERROR",

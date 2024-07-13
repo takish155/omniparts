@@ -14,7 +14,7 @@ const publicPages = [
   "/account/signin",
   "/account/signup",
   "/account/forgot-password",
-  "/account/forgot-password/*",
+  "/account/forgot-password/success",
 ];
 
 const intlMiddleware = createIntlMiddleware({

@@ -11,6 +11,10 @@ export const signInSchema = z.object({
     .max(20, { message: "invalidPasswordError" }),
 });
 
+export const sendForgotPasswordEmailSchema = z.object({
+  email: z.string().email({ message: "invalidEmailError" }),
+});
+
 export const signUpSchema = z
   .object({
     username: z
@@ -33,6 +37,9 @@ export const signUpSchema = z
   });
 
 export type SignInSchemaType = z.infer<typeof signInSchema>;
+export type SendForgotPasswordEmailSchemaType = z.infer<
+  typeof sendForgotPasswordEmailSchema
+>;
 export type SignInErrors = "invalidUsernameError" | "invalidPasswordError";
 export type SignUpSchemaType = z.infer<typeof signUpSchema>;
 export type SignUpErrors =

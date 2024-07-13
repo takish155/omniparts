@@ -98,7 +98,8 @@
     "description": "Enter your email to reset your password",
     "email": "Email",
     "resetPasswordButton": "Reset Password",
-    "rememberPassword": "Remember your password?"
+    "rememberPassword": "Remember your password?",
+    "invalidEmailError": "Invalid email"
   },
   "DiscoverPage": {
     "metaTitle": "Discover Products | Omniparts",
@@ -203,7 +204,9 @@
     "currentPassword": "Current Password",
     "newPassword": "New Password",
     "confirmPassword": "Confirm Password",
-    "emailVerification": "Email verification"
+    "emailVerification": "Email verification",
+    "emailNotFound": "Email not found in our database, try checking if the email is correct.",
+    "emailSent": "Instruction to reset your password has been sent to your email."
   },
   "AdminPage": {
     "title": "Admin Panel",

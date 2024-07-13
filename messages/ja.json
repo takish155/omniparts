@@ -103,7 +103,8 @@
     "description": "パスワードをリセットするためのメールを入力してください",
     "email": "メール",
     "resetPasswordButton": "パスワードをリセット",
-    "rememberPassword": "パスワードを覚えていますか？"
+    "rememberPassword": "パスワードを覚えていますか？",
+    "invalidEmailError": "無効なメール"
   },
   "DiscoverPage": {
     "metaTitle": "商品を探す | Omniparts",
@@ -208,7 +209,8 @@
     "currentPassword": "現在のパスワード",
     "newPassword": "新しいパスワード",
     "confirmPassword": "パスワードの確認",
-    "emailVerification": "メール認証"
+    "emailVerification": "メール認証",
+    "emailNotFound": "メールアドレスがデータベースに見つかりませんでした。メールアドレスが正しいかどうか確認してください。"
   },
   "AdminPage": {
     "title": "管理パネル",

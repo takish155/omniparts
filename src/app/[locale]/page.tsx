@@ -8,16 +8,11 @@ const FeaturedCPUSection = dynamic(
   { loading: () => <FeaturedSectionSkeleton /> }
 );
 
-const RecommendedPartsSection = dynamic(
-  () => import("@/components/home/section/recommended-parts")
-);
-
 export default async function Home() {
   return (
     <main>
       <HeroSection />
       <FeaturedCPUSection />
-      <RecommendedPartsSection />
     </main>
   );
 }

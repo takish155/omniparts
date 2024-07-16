@@ -5,9 +5,14 @@ import {
   sendForgotPasswordEmailSchema,
   SendForgotPasswordEmailSchemaType,
 } from "@/app/schema/account/authSchema";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { v4 as uuidv4 } from "uuid";
 import bcrypt from "bcryptjs";
+import { Resend } from "resend";
+import ForgotPasswordEN from "../../../emails/en/forgot-password";
+import ForgotPasswordJA from "../../../emails/ja/forgot-password";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendForgotPasswordEmailAction = async (
   email: SendForgotPasswordEmailSchemaType
@@ -38,6 +43,22 @@ const sendForgotPasswordEmailAction = async (
         expires: new Date(Date.now() + oneHour),
         token: hashedToken,
       },
+    });
+
+    const locale = await getLocale();
+    const url = `${process.env
+      .NEXT_PUBLIC_BASE_URL!}/${locale}/account/forgot-password/${
+      user.username
+    }/${unhashedToken}`;
+
+    await resend.emails.send({
+      from: "Omniparts <omniparts@takish155.dev>",
+      to: user.email,
+      subject: t("forgotPasswordRequest"),
+      react:
+        locale === "en"
+          ? ForgotPasswordEN({ username: user.username!, url })
+          : ForgotPasswordJA({ username: user.username!, url }),
     });
 
     return { message: "SUCCESS", status: 200 };

@@ -104,7 +104,17 @@
     "email": "メール",
     "resetPasswordButton": "パスワードをリセット",
     "rememberPassword": "パスワードを覚えていますか？",
-    "invalidEmailError": "無効なメール"
+    "invalidEmailError": "無効なメール",
+    "tokenValidationFailed": "トークンの検証に失敗しました",
+    "invalidToken": "無効なトークンです。URLを再確認してください",
+    "tokenExpired": "トークンの有効期限が切れています。もう一度パスワードをリセットして新しいトークンを取得してください",
+    "newPassword": "新しいパスワード",
+    "confirmPassword": "パスワードの確認",
+    "minPasswordError": "パスワードは6文字以上でなければなりません",
+    "maxPasswordError": "パスワードは20文字以内でなければなりません",
+    "passwordMismatchError": "パスワードが一致しません",
+    "passwordResetSuccess": "パスワードのリセットに成功しました！",
+    "forgotPasswordRequest": "パスワードリセットリクエスト"
   },
   "DiscoverPage": {
     "metaTitle": "商品を探す | Omniparts",
@@ -290,7 +300,10 @@
     "emailVerifiedSuccessDescription": "メールアドレスが正常に確認されました。これで、当店のサイトでの商品購入を開始することができます。",
     "emailVerifiedSuccess": "メールアドレス確認完了",
     "tokenExpiredOrInvalid": "トークンが期限切れか無効です。もう一度新しいトークンを取得してください。",
-    "pageNotFoundDescription": "申し訳ありませんが、探しているページが見つかりません。URLが正しいか確認するか、後でもう一度試してください。"
+    "pageNotFoundDescription": "申し訳ありませんが、探しているページが見つかりません。URLが正しいか確認するか、後でもう一度試してください。",
+    "footer": "Portfolio Project from <link>takish155.dev</link>",
+    "forgotPasswordEmailSent": "パスワードリセットメールが送信されました",
+    "forgotPasswordEmailSentDescription": "パスワードをリセットするためのリンクが含まれたメールが送信されました。メールが届かない場合は、スパムフォルダを確認してください。"
   },
   "AdminProductPage": {
     "title": "製品",

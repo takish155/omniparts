@@ -220,6 +220,7 @@
     "newPassword": "新しいパスワード",
     "confirmPassword": "パスワードの確認",
     "emailVerification": "メール認証",
+    "forgotPasswordRequest": "パスワードリセットリクエスト",
     "emailNotFound": "メールアドレスがデータベースに見つかりませんでした。メールアドレスが正しいかどうか確認してください。"
   },
   "AdminPage": {

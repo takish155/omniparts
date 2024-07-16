@@ -98,7 +98,19 @@
     "description": "Enter your email to reset your password",
     "email": "Email",
     "resetPasswordButton": "Reset Password",
-    "rememberPassword": "Remember your password?"
+    "rememberPassword": "Remember your password?",
+    "resetPassword": "Reset Password",
+    "resetPasswordDescription": "Enter your new password. Make sure to remember your password this time!",
+    "invalidEmailError": "Invalid email",
+    "tokenValidationFailed": "Token validation failed",
+    "invalidToken": "Invalid token, please try checking the url",
+    "tokenExpired": "Token is expired, please try getting a new token by resetting your password again",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "minPasswordError": "Password must be at least 6 characters",
+    "maxPasswordError": "Password must be at most 20 characters",
+    "passwordMismatchError": "Passwords do not match",
+    "passwordResetSuccess": "Password reset success!"
   },
   "DiscoverPage": {
     "metaTitle": "Discover Products | Omniparts",
@@ -203,7 +215,10 @@
     "currentPassword": "Current Password",
     "newPassword": "New Password",
     "confirmPassword": "Confirm Password",
-    "emailVerification": "Email verification"
+    "emailVerification": "Email verification",
+    "emailNotFound": "Email not found in our database, try checking if the email is correct.",
+    "emailSent": "Instruction to reset your password has been sent to your email.",
+    "forgotPasswordRequest": "Forgot Password Request"
   },
   "AdminPage": {
     "title": "Admin Panel",
@@ -287,7 +302,9 @@
     "emailVerifiedSuccessDescription": "Your email has been verified successfully, you can now start purchasing products in our store.",
     "emailVerifiedSuccess": "Email Verified",
     "tokenExpiredOrInvalid": "Token is expired or invalid, Please try getting a new token again.",
-    "footer": "Portfolio Project from <link>takish155.dev</link>"
+    "footer": "Portfolio Project from <link>takish155.dev</link>",
+    "forgotPasswordEmailSent": "Forgot password email sent",
+    "forgotPasswordEmailSentDescription": "An email has been sent to your email to reset your password. Check your email for more information."
   },
   "AdminProductPage": {
     "title": "Products",

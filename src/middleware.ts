@@ -40,7 +40,12 @@ export default function middleware(req: NextRequest) {
       .join("|")})/?$`,
     "i"
   );
+
   const pathname = req.nextUrl.pathname;
+
+  if (pathname.includes("sw") || pathname.includes("workbox")) {
+    return NextResponse.next();
+  }
   const isPublicPage = publicPathnameRegex.test(pathname);
 
   if (isPublicPage || ExtendedPublicMiddleware.isUrlPublic(pathname)) {

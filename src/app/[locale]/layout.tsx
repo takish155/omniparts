@@ -20,6 +20,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Omniparts",
+  manifest: "/manifest.json",
 };
 
 const AlertVerifyEmail = dynamic(

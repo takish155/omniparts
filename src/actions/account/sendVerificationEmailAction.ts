@@ -4,7 +4,6 @@ import { auth } from "@/app/api/auth/auth";
 import createVerificationToken from "@/app/api/auth/createVerificationToken";
 import prisma from "@/app/api/db";
 import { getLocale, getTranslations } from "next-intl/server";
-import React from "react";
 
 const sendVerificationEmailAction = async () => {
   try {

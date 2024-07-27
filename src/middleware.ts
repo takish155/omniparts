@@ -1,8 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import createIntlMiddleware from "next-intl/middleware";
 import { auth } from "@/app/api/auth/auth";
-import { checkIsProductPage } from "./utils/middleware/checkIsProductPage";
-import { checkIsVerificationPage } from "./utils/middleware/checkIsVerificationPage";
+import { ExtendedPublicMiddleware } from "./utils/middleware/ExtendedPublicMiddleware";
 
 const defaultLocale = "ja";
 const localePrefix = "always";
@@ -15,7 +14,7 @@ const publicPages = [
   "/account/signin",
   "/account/signup",
   "/account/forgot-password",
-  "/account/forgot-password/*",
+  "/account/forgot-password/success",
 ];
 
 const intlMiddleware = createIntlMiddleware({
@@ -41,14 +40,15 @@ export default function middleware(req: NextRequest) {
       .join("|")})/?$`,
     "i"
   );
+
   const pathname = req.nextUrl.pathname;
+
+  if (pathname.includes("sw") || pathname.includes("workbox")) {
+    return NextResponse.next();
+  }
   const isPublicPage = publicPathnameRegex.test(pathname);
 
-  if (
-    isPublicPage ||
-    checkIsProductPage(pathname) ||
-    checkIsVerificationPage(pathname)
-  ) {
+  if (isPublicPage || ExtendedPublicMiddleware.isUrlPublic(pathname)) {
     return intlMiddleware(req);
   }
 

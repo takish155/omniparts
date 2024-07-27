@@ -25,9 +25,6 @@ const useHandleSignIn = () => {
 
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: SignInSchemaType) => await signInAction(data),
-    onError: () => {
-      setError(true);
-    },
     onSuccess: (res) => {
       if (res.status === 400) {
         setError(true);

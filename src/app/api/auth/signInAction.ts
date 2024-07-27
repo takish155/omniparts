@@ -2,6 +2,7 @@
 
 import { SignInSchemaType } from "@/app/schema/account/authSchema";
 import { signIn } from "./auth";
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 const signInAction = async (data: SignInSchemaType) => {
@@ -10,15 +11,12 @@ const signInAction = async (data: SignInSchemaType) => {
       ...data,
       redirect: false,
     });
-
-    return {
-      status: 200,
-    };
   } catch (error) {
     return {
       status: 400,
     };
   }
+  redirect("/");
 };
 
 export default signInAction;

@@ -359,5 +359,15 @@
     "submit": "Submit",
     "Required": "Required",
     "error": "An error occurred"
+  },
+  "SupportPage": {
+    "title": "How can we help?",
+    "description": "Remember, this is portfolio project, but common questions are answered below.",
+    "doesItShip": "Does product here actually ship products? 🚚",
+    "doesItShipAnswer": "No, this is a portfolio project, I do not actually ship products.",
+    "howToBuy": "How do I buy products?",
+    "howToBuyAnswer": "You can buy products by signing in to your account and adding products to your cart. After that, you can proceed to checkout. (This will simulate buying products in a real store)",
+    "howToContact": "How do I contact support?",
+    "howToContactAnswer": "You can contact me by sending an email to logicaljp@icloud.com"
   }
 }

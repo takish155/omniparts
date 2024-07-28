@@ -37,8 +37,7 @@ export default async function RootLayout({
   signin: ReactNode;
   signup: ReactNode;
 }>) {
-  const messages = await getMessages();
-  const session = await auth();
+  const [messages, session] = await Promise.all([getMessages(), auth()]);
 
   return (
     <html lang={params.locale}>

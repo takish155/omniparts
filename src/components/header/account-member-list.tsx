@@ -39,7 +39,9 @@ const AccountMemberList = () => {
       </DropdownMenuGroup>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
-        <DropdownMenuItem>{t("support")}</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => router.push("/support")}>
+          {t("support")}
+        </DropdownMenuItem>
       </DropdownMenuGroup>
     </DropdownMenuContent>
   );

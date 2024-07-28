@@ -23,14 +23,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             username: credentials.username as string,
           },
         });
-        if (!user) return null;
+        if (!user) throw new Error("No user found");
 
         const isValid = await bcrypt.compare(
           credentials.password as string,
           user.hashedPassword!
         );
 
-        return isValid ? user : null;
+        if (!isValid) throw new Error("Invalid password");
+
+        return user;
       },
     }),
   ],

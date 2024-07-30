@@ -33,7 +33,9 @@
     "signOutError": "Sign out failed, please try again.",
     "language": "Language",
     "english": "English",
-    "japanese": "Japanese"
+    "japanese": "Japanese",
+    "search": "Search products...",
+    "searchButton": "Search"
   },
   "categories": {
     "cpu": "CPU",

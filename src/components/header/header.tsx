@@ -1,10 +1,11 @@
 import React from "react";
 import LocaleLink from "../locale-link";
-import PCNav from "./pc-nav";
 import MobileNav from "./mobile-nav";
 import AccoountNav from "./account-nav";
 import Cart from "./cart";
 import SwitchLanguage from "./switch-language";
+import PCSearch from "./pc-search";
+import MobileSearch from "./mobile-search";
 
 const Header = () => {
   return (
@@ -13,9 +14,10 @@ const Header = () => {
         <h1 className="font-bold sm:text-4xl py-5 max-sm:text-lg">
           <LocaleLink href="/">Omniparts</LocaleLink>
         </h1>
-        <PCNav />
+        <PCSearch />
       </div>
       <nav className="flex items-center gap-4">
+        <MobileSearch />
         <Cart />
         <AccoountNav />
         <SwitchLanguage />

@@ -9,10 +9,12 @@ const useFilterHandler = () => {
   const rating = searchParams.get("rating");
   const price = searchParams.get("price");
   const manufacturedYears = searchParams.get("year");
+  const query = searchParams.get("query");
 
   const handleUpdateParams = (
     key: "category" | "rating" | "price" | "year" | "query",
-    value: string
+    value: string,
+    isNotDiscoverPage?: boolean
   ) => {
     const currentPaths = [];
     if (category && key !== "category")
@@ -21,16 +23,29 @@ const useFilterHandler = () => {
     if (price && key !== "price") currentPaths.push(`price=${price}`);
     if (manufacturedYears && key !== "year")
       currentPaths.push(`year=${manufacturedYears}`);
-    if (price && key !== "query") currentPaths.push(`query=${value}`);
+    if (query && key !== "query") currentPaths.push(`query=${query}`);
 
     const newPaths = currentPaths.join("&");
 
-    router.push(`${pathName}?${newPaths}&${key}=${value}`);
+    if (pathName.includes("discover")) {
+      router.push(`${pathName}?${newPaths}&${key}=${value}`);
+      return;
+    }
+
+    router.push(`${pathName}/discover/?${newPaths}&${key}=${value}`);
   };
 
-  return { category, rating, price, manufacturedYears, handleUpdateParams };
+  return {
+    category,
+    rating,
+    price,
+    manufacturedYears,
+    handleUpdateParams,
+    query,
+  };
 };
 
 export default useFilterHandler;
 
 export type FilterHandler = ReturnType<typeof useFilterHandler>;
+// tingin

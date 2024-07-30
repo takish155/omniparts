@@ -15,6 +15,10 @@ const publicPages = [
   "/account/signup",
   "/account/forgot-password",
   "/account/forgot-password/success",
+<<<<<<< HEAD
+=======
+  "/support",
+>>>>>>> d753811f75300808e77fbe91caf18e75c73d3476
 ];
 
 const intlMiddleware = createIntlMiddleware({
@@ -48,7 +52,15 @@ export default function middleware(req: NextRequest) {
   }
   const isPublicPage = publicPathnameRegex.test(pathname);
 
+<<<<<<< HEAD
   if (isPublicPage || ExtendedPublicMiddleware.isUrlPublic(pathname)) {
+=======
+  if (isPublicPage) {
+    return intlMiddleware(req);
+  }
+
+  if (ExtendedPublicMiddleware.isUrlPublic(pathname)) {
+>>>>>>> d753811f75300808e77fbe91caf18e75c73d3476
     return intlMiddleware(req);
   }
 

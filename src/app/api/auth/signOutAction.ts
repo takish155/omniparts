@@ -1,6 +1,5 @@
 "use server";
 
-import React from "react";
 import { signOut } from "./auth";
 import { getTranslations } from "next-intl/server";
 

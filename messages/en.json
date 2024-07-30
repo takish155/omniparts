@@ -33,7 +33,9 @@
     "signOutError": "Sign out failed, please try again.",
     "language": "Language",
     "english": "English",
-    "japanese": "Japanese"
+    "japanese": "Japanese",
+    "search": "Search products...",
+    "searchButton": "Search"
   },
   "categories": {
     "cpu": "CPU",
@@ -359,5 +361,25 @@
     "submit": "Submit",
     "Required": "Required",
     "error": "An error occurred"
+  },
+  "SupportPage": {
+    "title": "How can we help?",
+    "description": "Remember, this is portfolio project, but common questions are answered below.",
+    "doesItShip": "Does product here actually ship products? 🚚",
+    "doesItShipAnswer": "No, this is a portfolio project, We do not actually ship products.",
+    "howToBuy": "How do I buy products?",
+    "howToBuyAnswer": "You can buy products by signing in to your account and adding products to your cart. After that, you can proceed to checkout. (This will simulate buying products in a real store)",
+    "howToContact": "How do I contact support?",
+    "howToContactAnswer": "You can contact me by sending an email to logicaljp@icloud.com",
+    "itAskedMeToVerify": "It asked me to verify my email, what should I do?",
+    "itAskedMeToVerifyAnswer": "You can verify your email by clicking the link in the email that was sent to you. If you did not receive an email, you can resend the email by the popup that appears at the top of the page.",
+    "whatNotToDo": "What should I not do?",
+    "WhatNotToDoAnswer": "Do not enter your personal information such as credit card information, address, etc. Although Stripe is used for payment, it is on test mode and I would be able to see your information if you enter it.",
+    "canIUseThis": "Can I use this project for my own use?",
+    "canIUseThisAnswer": "Yes, you can use this project for your own use. You can find the source code in my github repository.",
+    "simulatingBuying": "Simulating buying products",
+    "simulatingBuyingAnswer": "This project is a portfolio project, so it does not actually ship products. You can simulate buying products by signing in to your account and adding products to your cart. After that, you can proceed to checkout. After that, you'll be redirected to Stripe's test mode to simulate buying products. You can use the following test card number: 4242 4242 4242 4242, any future date, and any CVC.",
+    "customerRelatedQuestions": "Customer related questions",
+    "technicalRelatedQuestions": "Technical related questions"
   }
 }

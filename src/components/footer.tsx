@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full text-center mt-[15rem] bg-gray-950 text-white py-10">
-      <p className="mb-1">
+      <p className="mb-1 font-light">
         {t.rich("footer", {
           link: (chunk) => (
             <Link
@@ -22,7 +22,7 @@ const Footer = () => {
           ),
         })}
       </p>
-      <p className=" text-lg">©2024 SomeParts, all rights reserve</p>
+      <p className="text-sm">©2024 SomeParts, all rights reserve</p>
     </footer>
   );
 };

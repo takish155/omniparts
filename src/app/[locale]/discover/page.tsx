@@ -10,15 +10,16 @@ const DiscoverPage = () => {
   const t = useTranslations("DiscoverPage");
 
   return (
-    <main className="w-[95%] mx-auto">
-      <h2 className="text-5xl font-bold mt-8 mb-2">{t("title")}</h2>
-      <p className="mb-8">{t("description")}</p>
-      <Separator />
+    <main className="w-full mx-auto min-h-screen justify-around flex mt-8 flex-wrap">
       <FilterHandlerProvider>
         <FilterSection />
       </FilterHandlerProvider>
-      <Separator className="mb-8" />
       <ProductSection />
+      {/* <h2 className="text-5xl font-bold mt-8 mb-2">{t("title")}</h2>
+      <p className="mb-8">{t("description")}</p>
+      <Separator />
+      <Separator className="mb-8" />
+      <ProductSection /> */}
     </main>
   );
 };

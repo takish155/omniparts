@@ -6,6 +6,7 @@ import Cart from "./cart";
 import SwitchLanguage from "./switch-language";
 import PCSearch from "./pc-search";
 import MobileSearch from "./mobile-search";
+import PCNav from "./pc-nav";
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
         <h1 className="font-bold sm:text-4xl py-5 max-sm:text-lg">
           <LocaleLink href="/">Omniparts</LocaleLink>
         </h1>
-        <PCSearch />
+        <PCNav />
       </div>
       <nav className="flex items-center gap-4">
         <MobileSearch />

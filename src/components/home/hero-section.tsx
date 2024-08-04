@@ -17,14 +17,20 @@ const HeroSection = async () => {
   return (
     <article>
       <section className="flex bg-gray-950 mb-5 flex-wrap max-md:flex-col-reverse">
-        <section className="text-white my-auto w-[50%] max-md:w-[90%] mx-auto flex-wrap max-md:py-6">
+        <section className="text-white my-auto w-[50%] max-md:w-full flex-wrap py-11">
           <div className="w-[95%] mx-auto">
-            <h2 className="text-3xl font-bold ml-4 mb-2">{t("heroHeader")}</h2>
-            <p className="ml-4 mb-4">{t("heroDescription")}</p>
+            <h2 className="text-2xl max-md:text-xl font-bold ml-4 mb-2">
+              {t("heroHeader")}
+            </h2>
+            <p className="ml-4 mb-4 max-md:text-sm font-extralight">
+              {t("heroDescription")}
+            </p>
           </div>
           <div className="w-[95%] mx-auto">
             <LocaleLink href={"/discover?category=gpu"} passHref={true}>
-              <Button className="ml-4">{t("browseRTX4090TIProducts")}</Button>
+              <Button className="ml-4" size={"sm"}>
+                {t("browseRTX4090TIProducts")}
+              </Button>
             </LocaleLink>
           </div>
         </section>

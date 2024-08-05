@@ -19,10 +19,7 @@ const CategoryNavList = ({ className }: { className?: string }) => {
     <>
       {categories.map((categories) => {
         return (
-          <li
-            key={categories.name}
-            className={`hover:font-extrabold ${className}`}
-          >
+          <li key={categories.name} className={`hover:underline ${className}`}>
             <LocaleLink href={categories.link} passHref>
               {t(categories.name as any)}
             </LocaleLink>

@@ -20,14 +20,20 @@ const FeaturedSectionHero = ({ data }: { data: FeaturedSectionHeroProps }) => {
         data.position === "right" ? "md:flex-row-reverse" : ""
       }`}
     >
-      <section className="text-white my-auto w-[50%] max-md:w-[90%] max-md:py-6">
+      <section className="text-white my-auto w-[50%] max-md:w-[90%] max-md:py-11">
         <div className="w-[95%] mx-auto">
-          <h2 className="text-3xl font-bold ml-4 mb-2">{data.title}</h2>
-          <p className="ml-4 mb-4">{data.description}</p>
+          <h2 className="text-3xl max-md:text-xl font-bold ml-4 mb-2">
+            {data.title}
+          </h2>
+          <p className="ml-4 mb-4 font-extralight max-md:text-sm">
+            {data.description}
+          </p>
         </div>
         <div className="w-[95%] mx-auto">
           <LocaleLink href={data.buttonLink} passHref={true}>
-            <Button className="ml-4">{data.actionButtonName}</Button>
+            <Button className="ml-4" size="sm">
+              {data.actionButtonName}
+            </Button>
           </LocaleLink>
         </div>
       </section>

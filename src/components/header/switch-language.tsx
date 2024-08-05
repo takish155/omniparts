@@ -24,6 +24,11 @@ const SwitchLanguage = () => {
     <DropdownMenu>
       <DropdownMenuTrigger>
         <LanguagesIcon size={20} />
+        <p className="sr-only">
+          {t("toggleLanguage", {
+            lang: t(locale === "en" ? "ja" : "en"),
+          })}
+        </p>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>{t("language")}</DropdownMenuLabel>

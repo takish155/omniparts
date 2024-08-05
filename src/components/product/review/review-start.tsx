@@ -11,7 +11,7 @@ const ReviewStar = ({ defaultValue }: { defaultValue?: number }) => {
   const { control, errors } = useHandleReviewContext() || {};
 
   return (
-    <section className="mb-6">
+    <section>
       <h2 className="text-2xl font-bold">{t("ratingTitle")}</h2>
       <Controller
         name="starRating"

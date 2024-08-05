@@ -35,7 +35,12 @@
     "english": "English",
     "japanese": "Japanese",
     "search": "Search products...",
-    "searchButton": "Search"
+    "searchButton": "Search",
+    "searchProducts": "Search Products",
+    "toggleLanguage": "Toggle language to {lang}",
+    "en": "English",
+    "ja": "Japanese",
+    "clearQuery": "Clear"
   },
   "categories": {
     "cpu": "CPU",
@@ -117,7 +122,7 @@
   "DiscoverPage": {
     "metaTitle": "Discover Products | Omniparts",
     "metaDescription": "Discover the best parts for your PC build, from the fastest CPU to the most powerful GPU. from the most reliable storage to the most efficient cooling fans.",
-    "title": "Discover",
+    "title": "Discover Products",
     "description": "Discover the best parts for your PC build, from the fastest CPU to the most powerful GPU. from the most reliable storage to the most efficient cooling fans.",
     "categoies": "Categories",
     "rating": "Rating",
@@ -134,7 +139,9 @@
     "below": "Below {price}",
     "aboveRating": "Above {rating} stars",
     "toggleMenubar": "Toggle Menubar",
-    "noProducts": "No products found, try searching for another product or try again later."
+    "noProducts": "No products found, try searching for another product or try again later.",
+    "filter": "Filter",
+    "searchFor": "Search for <span></span>"
   },
   "ProductPage": {
     "taxIncluded": "Tax Included",

@@ -13,9 +13,11 @@ import { Slash } from "lucide-react";
 const ProductBreadCrumb = ({
   category,
   productName,
+  slug,
 }: {
   category: string;
   productName: string;
+  slug: string;
 }) => {
   const t = useTranslations("ProductPage");
 
@@ -37,7 +39,9 @@ const ProductBreadCrumb = ({
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink>{productName}</BreadcrumbLink>
+          <BreadcrumbLink href={`/product/${slug}`}>
+            {productName}
+          </BreadcrumbLink>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

@@ -6,7 +6,7 @@ const AdminOrderedActionSection = ({
   value: string;
 }) => {
   return (
-    <section className="mb-6">
+    <section>
       <h3 className="font-bold text-lg">{name}</h3>
       <p className="text-sm">{value}</p>
     </section>

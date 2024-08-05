@@ -51,6 +51,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
       <ProductBreadCrumb
         category={data.productCategory}
         productName={data.productName}
+        slug={params.slug}
       />
       <ProductImage image={data.productImage} alt={data.productName} />
       <ProductInfo data={data} slug={params.slug} />

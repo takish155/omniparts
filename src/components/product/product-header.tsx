@@ -24,11 +24,14 @@ const ProductHeader = ({
 
   return (
     <section className="mb-5">
-      <h2 className="text-4xl font-bold mb-3">{productTitle}</h2>
+      <h2 className="max-md:text-xl text-4xl font-bold mb-3">{productTitle}</h2>
       <ProductRating slug={slug} />
-      <p className="font-medium text-right">
-        ¥ <span className="text-4xl">{formatToMoney(productPrice, "")}</span> (
-        {t("taxIncluded")})
+      <p className="font-medium max-md:text-sm text-right">
+        ¥{" "}
+        <span className="text-4xl max-md:text-xl">
+          {formatToMoney(productPrice, "")}
+        </span>{" "}
+        ({t("taxIncluded")})
       </p>
     </section>
   );

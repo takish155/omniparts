@@ -4,7 +4,6 @@ import MobileNav from "./mobile-nav";
 import AccoountNav from "./account-nav";
 import Cart from "./cart";
 import SwitchLanguage from "./switch-language";
-import PCSearch from "./pc-search";
 import MobileSearch from "./mobile-search";
 import PCNav from "./pc-nav";
 

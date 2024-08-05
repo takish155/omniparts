@@ -11,10 +11,11 @@ import { useTranslations } from "next-intl";
 import MobileSearchInput from "./mobile-search-input";
 import { Separator } from "../ui/separator";
 import dynamic from "next/dynamic";
+import MobileFilter from "./mobile-filter";
 
-const MobileFilter = dynamic(() => import("./mobile-filter"), {
-  ssr: false,
-});
+// const MobileFilter = dynamic(() => import("./mobile-filter"), {
+//   ssr: false,
+// });
 
 const MobileSearch = () => {
   const t = useTranslations("header");

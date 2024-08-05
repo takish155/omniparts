@@ -17,7 +17,20 @@ const ProductSection = () => {
 
   if ("data" in data!) {
     if (data.data.length === 0) {
-      return <p className="mt-4 mb-[75vh] flex-grow">{t("noProducts")}</p>;
+      return (
+        <div className="flex-grow h-screen">
+          {query && (
+            <div className="mb-10 ml-4">
+              <p className="text-lg">
+                {t.rich("searchFor", {
+                  span: () => <span className="font-bold">{query}</span>,
+                })}
+              </p>
+            </div>
+          )}
+          <p className="ml-8 mt-4 flex-grow font-light">{t("noProducts")}</p>
+        </div>
+      );
     }
     return (
       <div className="flex-grow">

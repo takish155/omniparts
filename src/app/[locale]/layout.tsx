@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, M_PLUS_1p } from "next/font/google";
 import "./../globals.css";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -16,6 +16,11 @@ import dynamic from "next/dynamic";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
+});
+
+const m_plus = M_PLUS_1p({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -41,7 +46,9 @@ export default async function RootLayout({
 
   return (
     <html lang={params.locale}>
-      <body className={roboto.className}>
+      <body
+        className={params.locale === "en" ? roboto.className : m_plus.className}
+      >
         <NextIntlClientProvider messages={messages}>
           <QueryProvider>
             <SessionProvider session={session}>

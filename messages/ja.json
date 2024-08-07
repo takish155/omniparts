@@ -10,7 +10,14 @@
     "cooling_fans": "冷却ファン",
     "notSignedIn": "未ログイン",
     "signedIn": "ログイン済み",
+    "clearQuery": "検索をクリア",
     "signIn": "ログイン",
+    "en": "英語",
+    "ja": "日本語",
+    "search": "商品を検索...",
+    "searchButton": "検索",
+    "searchProducts": "商品を検索",
+    "toggleLanguage": "言語を{lang}に切り替える",
     "signUp": "会員登録",
     "signOut": "ログアウト",
     "noAccount": "アカウントをお持ちでないですか？ 会員登録しよう",
@@ -114,7 +121,9 @@
     "maxPasswordError": "パスワードは20文字以内でなければなりません",
     "passwordMismatchError": "パスワードが一致しません",
     "passwordResetSuccess": "パスワードのリセットに成功しました！",
-    "forgotPasswordRequest": "パスワードリセットリクエスト"
+    "forgotPasswordRequest": "パスワードリセットリクエスト",
+    "resetPassword": "パスワードをリセット",
+    "resetPasswordDescription": "新しいパスワードを入力してください。忘れないようにきおつけてください。"
   },
   "DiscoverPage": {
     "metaTitle": "商品を探す | Omniparts",
@@ -136,7 +145,9 @@
     "below": "{price}以下",
     "aboveRating": "{rating}スター以上",
     "toggleMenubar": "メニューバーの切り替え",
-    "noProducts": "商品が見つかりません。別の商品を検索するか、後でもう一度試してください。"
+    "noProducts": "商品が見つかりません。別の商品を検索するか、後でもう一度試してください。",
+    "filter": "フィルター",
+    "searchFor": "<span></span>を検索"
   },
   "ProductPage": {
     "taxIncluded": "税込み",
@@ -218,6 +229,7 @@
     "passwordMismatchError": "パスワードが一致しません",
     "currentPassword": "現在のパスワード",
     "newPassword": "新しいパスワード",
+    "emailSent": "メールが送信されました",
     "confirmPassword": "パスワードの確認",
     "emailVerification": "メール認証",
     "forgotPasswordRequest": "パスワードリセットリクエスト",
@@ -304,7 +316,10 @@
     "pageNotFoundDescription": "申し訳ありませんが、探しているページが見つかりません。URLが正しいか確認するか、後でもう一度試してください。",
     "footer": "Portfolio Project from <link>takish155.dev</link>",
     "forgotPasswordEmailSent": "パスワードリセットメールが送信されました",
-    "forgotPasswordEmailSentDescription": "パスワードをリセットするためのリンクが含まれたメールが送信されました。メールが届かない場合は、スパムフォルダを確認してください。"
+    "forgotPasswordEmailSentDescription": "パスワードをリセットするためのリンクが含まれたメールが送信されました。メールが届かない場合は、スパムフォルダを確認してください。",
+    "emailAlreadyVerified": "メールは既に確認されています",
+    "notLoggedIn": "ログインしていません",
+    "userNotFound": "ユーザーが見つかりません"
   },
   "AdminProductPage": {
     "title": "製品",
@@ -359,5 +374,25 @@
     "submit": "提出",
     "Required": "必須",
     "error": "エラーが発生しました"
+  },
+  "SupportPage": {
+    "canIUseThis": "このプロジェクトを自分の利用のために使ってもいいですか？",
+    "canIUseThisAnswer": "はい、このプロジェクトを自分の利用のために使うことができます。ソースコードは私のGitHubリポジトリにあります。",
+    "customerRelatedQuestions": "顧客に関する質問",
+    "description": "これはポートフォリオプロジェクトですが、一般的な質問には以下で答えています。",
+    "doesItShip": "ここでの商品は実際に発送されますか？🚚",
+    "doesItShipAnswer": "いいえ、これはポートフォリオプロジェクトであり、実際には商品を発送することはありません。",
+    "howToBuy": "どうやって商品を購入しますか？",
+    "howToBuyAnswer": "アカウントにサインインし、商品をカートに追加することで購入できます。その後、チェックアウトに進んでください。（これは実際の店舗での購入をシミュレートするものです）",
+    "howToContact": "サポートにどうやって連絡しますか？",
+    "howToContactAnswer": "私に連絡するには、logicaljp@icloud.comにメールを送信してください。",
+    "itAskedMeToVerify": "メールの確認を求められたのですが、どうすればよいですか？",
+    "itAskedMeToVerifyAnswer": "メールで送信されたリンクをクリックしてメールを確認してください。メールを受け取っていない場合は、ページ上部に表示されるポップアップからメールを再送信できます。",
+    "simulatingBuying": "商品購入のシミュレーション",
+    "simulatingBuyingAnswer": "このプロジェクトはポートフォリオプロジェクトなので、実際に商品を発送することはありません。アカウントにサインインし、商品をカートに追加することで購入をシミュレートできます。その後、チェックアウトに進むと、Stripeのテストモードにリダイレクトされ、商品の購入をシミュレートできます。以下のテストカード番号を使用できます：4242 4242 4242 4242、有効期限は任意、CVCも任意です。",
+    "technicalRelatedQuestions": "技術に関する質問",
+    "title": "どのようにお手伝いできますか？",
+    "whatNotToDo": "何をしてはいけませんか？",
+    "WhatNotToDoAnswer": "クレジットカード情報や住所などの個人情報を入力しないでください。Stripeはテストモードで使用されていますが、入力した情報を見ることができます。"
   }
 }

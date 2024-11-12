@@ -15,7 +15,7 @@ const FilterSection = () => {
   const locale = useLocale();
 
   return (
-    <section className="max-md:hidden w-[160px] pl-4 pr-4">
+    <section className="max-md:hidden w-[150px] max-w-[30%] pl-4 pr-4">
       <h2
         className={`font-medium ${
           locale === "en" ? "text-2xl" : "text-lg"

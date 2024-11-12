@@ -7,12 +7,12 @@ const Footer = () => {
   const locale = useLocale();
 
   return (
-    <footer className="w-full text-center mt-[15rem] bg-gray-950 text-white py-10">
-      <p className="mb-1 font-light">
+    <footer className="w-full text-center mt-[15rem] bg-gray-950 text-white py-14">
+      <p>
         {t.rich("footer", {
           link: (chunk) => (
             <Link
-              href={`https://www.takish155.dev/${locale}`}
+              href={`https://takish155.com/${locale}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
@@ -22,7 +22,7 @@ const Footer = () => {
           ),
         })}
       </p>
-      <p className="text-sm">©2024 SomeParts, all rights reserve</p>
+      <p>©2024 Omniparts, all rights reserve</p>
     </footer>
   );
 };

@@ -8,9 +8,8 @@ import { getProductBySlug } from "@/lib/fetch/getProductBySlug";
 import { Skeleton } from "@/components/ui/skeleton";
 import PageMessage from "@/components/product/product-message";
 import ProductBreadCrumb from "@/components/product/product-breadcrumb";
-import { caller } from "@/server";
-import { Button } from "@/components/ui/button";
 import { revalidateTag } from "next/cache";
+import { auth } from "@/app/api/auth/auth";
 
 const ProductImage = dynamic(
   () => import("@/components/product/product-image"),
@@ -33,7 +32,12 @@ const ReviewProduct = dynamic(
 const ProductPage = async ({ params }: { params: { slug: string } }) => {
   const productData = getProductBySlug(params.slug);
   const translation = getTranslations("PageMessages");
-  const [productApiResponse, t] = await Promise.all([productData, translation]);
+  const sessionData = auth();
+  const [productApiResponse, t, session] = await Promise.all([
+    productData,
+    translation,
+    sessionData,
+  ]);
 
   if (productApiResponse.status === 404) {
     revalidateTag("products");
@@ -47,7 +51,12 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <main className="flex mt-8 flex-wrap w-[95%] mx-auto justify-evenly">
-      <ReviewProduct productName={data.productName} productSlug={params.slug} />
+      {session && (
+        <ReviewProduct
+          productName={data.productName}
+          productSlug={params.slug}
+        />
+      )}
       <ProductBreadCrumb
         category={data.productCategory}
         productName={data.productName}

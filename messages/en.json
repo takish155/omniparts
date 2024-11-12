@@ -311,7 +311,7 @@
     "emailVerifiedSuccessDescription": "Your email has been verified successfully, you can now start purchasing products in our store.",
     "emailVerifiedSuccess": "Email Verified",
     "tokenExpiredOrInvalid": "Token is expired or invalid, Please try getting a new token again.",
-    "footer": "Portfolio Project from <link>takish155.dev</link>",
+    "footer": "Made with <3 from <link>https://takish155.com/</link>",
     "forgotPasswordEmailSent": "Forgot password email sent",
     "forgotPasswordEmailSentDescription": "An email has been sent to your email to reset your password. Check your email for more information."
   },

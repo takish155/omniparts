@@ -29,19 +29,21 @@ export const metadata: Metadata = {
 };
 
 const AlertVerifyEmail = dynamic(
-  () => import("@/components/alert-verify-email"),
-  { ssr: false }
+  () => import("@/components/alert-verify-email")
 );
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-  signin: ReactNode;
-  signup: ReactNode;
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: { locale: string };
+    signin: ReactNode;
+    signup: ReactNode;
+  }>
+) {
+  const params = await props.params;
+
+  const { children } = props;
+
   const [messages, session] = await Promise.all([getMessages(), auth()]);
 
   return (

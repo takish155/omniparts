@@ -9,7 +9,8 @@ import { getReviewResponse } from "@/lib/fetch/getReviewResponse";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 
-const ReviewPage = async ({ params }: { params: { slug: string } }) => {
+const ReviewPage = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
   const response = getReviewResponse(params.slug);
   const translation = getTranslations("ReviewPage");
   const [data, t] = await Promise.all([response, translation]);

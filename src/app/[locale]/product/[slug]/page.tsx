@@ -24,12 +24,11 @@ const ProductImage = dynamic(
 
 const ReviewProduct = dynamic(
   () => import("@/components/product/review/review-product"),
-  {
-    ssr: false,
-  }
+  {}
 );
 
-const ProductPage = async ({ params }: { params: { slug: string } }) => {
+const ProductPage = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
   const productData = getProductBySlug(params.slug);
   const translation = getTranslations("PageMessages");
   const sessionData = auth();
@@ -75,11 +74,10 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }) {
+  const params = await props.params;
   const response = await getProductBySlug(params.slug);
   if (response.status === 404) {
     return {

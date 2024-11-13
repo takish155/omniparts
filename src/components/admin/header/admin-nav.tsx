@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 
 interface AdminNav {
   name: "dashboard" | "orders" | "products" | "users" | "settings";
@@ -19,7 +20,7 @@ interface AdminNav {
     | "/admin/products"
     | "/admin/users"
     | "/admin/settings";
-  icon: JSX.Element;
+  icon: ReactNode;
 }
 
 const adminNav: AdminNav[] = [

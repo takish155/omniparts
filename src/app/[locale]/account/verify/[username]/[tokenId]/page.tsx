@@ -2,11 +2,12 @@ import PageMessage from "@/components/product/product-message";
 import verifyTokenId from "@/lib/fetch/verifyTokenId";
 import { getTranslations } from "next-intl/server";
 
-const VerificationPage = async ({
-  params,
-}: {
-  params: { tokenId: string; username: string };
-}) => {
+const VerificationPage = async (
+  props: {
+    params: Promise<{ tokenId: string; username: string }>;
+  }
+) => {
+  const params = await props.params;
   const res = verifyTokenId(params.username, params.tokenId);
   const translation = getTranslations("PageMessages");
   const [data, t] = await Promise.all([res, translation]);

@@ -7,7 +7,6 @@ import { Skeleton } from "../ui/skeleton";
 import ProductStockSkeleton from "./skeleton/product-stock-skeleton";
 
 const ProductRating = dynamic(() => import("./product-rating"), {
-  ssr: false,
   loading: () => <Skeleton className="mb-4 h-7 w-20" />,
 });
 

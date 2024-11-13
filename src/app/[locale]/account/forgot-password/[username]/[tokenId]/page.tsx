@@ -11,11 +11,12 @@ import {
 import { getTranslations } from "next-intl/server";
 import React from "react";
 
-const ForgotPasswordPage = async ({
-  params,
-}: {
-  params: { tokenId: string; username: string };
-}) => {
+const ForgotPasswordPage = async (
+  props: {
+    params: Promise<{ tokenId: string; username: string }>;
+  }
+) => {
+  const params = await props.params;
   const translation = getTranslations("ForgotPasswordPage");
   const response = validateForgotPasswordTokenAction(
     params.tokenId,

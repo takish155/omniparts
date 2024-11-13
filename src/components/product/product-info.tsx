@@ -6,7 +6,6 @@ import ProductActionSkeleton from "./skeleton/product-action-skeleton";
 import { ProductInfoProps } from "@/app/type/api/get-product-info";
 
 const ProductAction = dynamic(() => import("./product-action"), {
-  ssr: false,
   loading: () => <ProductActionSkeleton />,
 });
 

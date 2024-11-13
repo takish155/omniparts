@@ -1,10 +1,8 @@
 import { ProductCategory } from "@/components/product/load-product-recommendation";
 import prisma from "@/app/api/db";
 
-export const GET = async (
-  req: Request,
-  { params }: { params: { category: ProductCategory } }
-) => {
+export const GET = async (req: Request, props: { params: Promise<{ category: ProductCategory }> }) => {
+  const params = await props.params;
   try {
     const data = await prisma.product.findMany({
       where: {

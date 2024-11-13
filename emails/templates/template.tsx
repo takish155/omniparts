@@ -26,7 +26,7 @@ const Template = ({ children }: { children: ReactNode }) => {
             <Text className="text-center"></Text>
             <Text className="text-center">
               Portfolio Project,
-              <Link href="https://takish155.dev/">takish155.dev</Link> <br />
+              <Link href="https://takish155.com/">takish155.com</Link> <br />
               ©2024 Omniparts, all rights reserve
             </Text>
           </Section>

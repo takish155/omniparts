@@ -6,7 +6,7 @@ import { LoadProductRecommendationsProps } from "./load-product-recommendation";
 
 const LoadProductRecommendations = dynamic(
   () => import("./load-product-recommendation"),
-  { loading: () => <ProductRecommendationSkleton />, ssr: false }
+  { loading: () => <ProductRecommendationSkleton /> }
 );
 
 const ProductRecommendation = ({

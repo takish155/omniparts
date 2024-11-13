@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 import MobileFilter from "./mobile-filter";
 
 // const MobileFilter = dynamic(() => import("./mobile-filter"), {
-//   ssr: false,
+//
 // });
 
 const MobileSearch = () => {

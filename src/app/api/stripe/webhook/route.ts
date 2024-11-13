@@ -15,7 +15,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export const POST = async (req: Request) => {
   const body = await req.text();
   const endpointSecret = process.env.STRIPE_SECRET_WEBHOOK_KEY!;
-  const sig = headers().get("stripe-signature") as string;
+  const sig = (await headers()).get("stripe-signature") as string;
   let event: Stripe.Event;
   try {
     event = stripe.webhooks.constructEvent(body, sig, endpointSecret);

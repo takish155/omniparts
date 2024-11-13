@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import ProductReviewSkeleton from "./skeleton/product-review-skeleton";
 
 const LoadProductReviews = dynamic(() => import("./load-product-review"), {
-  ssr: false,
   loading: () => <ProductReviewSkeleton />,
 });
 

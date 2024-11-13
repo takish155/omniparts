@@ -1,9 +1,7 @@
 import prisma from "../../db";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { slug: string } }
-) {
+export async function GET(req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   try {
     const product = await prisma.product.findFirst({
       where: { slug: params.slug },

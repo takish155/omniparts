@@ -7,7 +7,6 @@ const RenderOrderHistory = dynamic(
   () => import("@/components/account/order-history/render-order-history"),
   {
     loading: () => <OrderCardSkeleton />,
-    ssr: false,
   }
 );
 
